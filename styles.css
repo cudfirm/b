@@ -251,15 +251,23 @@ a:hover {
   font-weight: bold;
   cursor: pointer;
 }
+
+/* In styles.css, use this updated block for the market grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  /* The minmax() value is adjusted for better fluid responsiveness */
+  grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
   gap: 8px;
 }
 .grid-item {
   text-align: center;
   font-size: 12px;
 }
+/* This ensures long words in product names don't break the layout */
+.grid-item div {
+    word-break: break-word;
+}
+
 .grid-item img {
   width: 100%;
   border-radius: 6px;
