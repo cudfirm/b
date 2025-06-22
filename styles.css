@@ -88,7 +88,7 @@ a:hover {
 }
 
 .sidebar-left {
-  flex: 0 0 12%;
+  flex: 0 0 5%; /*12*/
   display: flex;
   flex-direction: column;
   background-color: #f9f9f9;
@@ -96,7 +96,7 @@ a:hover {
 
 .sidebar-left .sidebar-header,
 .sidebar-left .sidebar-footer {
-  flex: 0 0 auto;
+  flex: 0 0 5%; /*auto*/
   padding: .5rem;
   text-align: center;
   background: #4b6599;
@@ -421,7 +421,7 @@ a:hover {
   }
 
   .sidebar-left {
-    flex: 0 0 12%;
+    flex: 0 0 5%; /*12*/
   }
   .content-area {
     flex: 1 1 auto;
