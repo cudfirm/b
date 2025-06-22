@@ -421,7 +421,7 @@ a:hover {
   }
 
   .sidebar-left {
-    flex: 0 0 15%;
+    flex: 0 0 12%;
   }
   .content-area {
     flex: 1 1 auto;
