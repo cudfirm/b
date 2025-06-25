@@ -256,7 +256,7 @@ p { font-size: clamp(14px, 1.8vw, 16px); }
 /* NEW: Specific styling for the Home tab to restore its design */
 #home-content {
     background-color: #ffffff;
-    padding: 1rem;
+    padding: .5rem;
 }
 
 /* Stories Tab Styling */
