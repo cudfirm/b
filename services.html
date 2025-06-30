@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUDFIRM - Easy Find</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Diplomata&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* A soft, modern grey */
+        }
+        .diplomata {
+            font-family: 'Diplomata', cursive;
+        }
+        .card-title-diagonal {
+            position: absolute;
+            left: -45px;
+            top: 25px;
+            width: 170px; /* Crucial for text wrapping */
+            transform: rotate(-45deg);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            font-size: 0.7rem; /* Smaller font size */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        /* NEW: Style for the search highlight */
+        mark {
+            background-color: #fef08a; /* A soft yellow highlight */
+            padding: 0 2px;
+            border-radius: 3px;
+            color: inherit;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-20">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 diplomata">CUDFIRM</h1>
+            <div class="flex items-center space-x-4 text-gray-600">
+                <a href="#" class="hover:text-blue-600 transition-colors"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-blue-400 transition-colors"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-pink-600 transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-blue-700 transition-colors"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-6 lg:p-8">
+        
+        <!-- Main Content Wrapper -->
+        <div id="main-content-wrapper" class="lg:grid lg:grid-cols-12 lg:gap-8">
+            
+            <!-- Main Content Area (Cards) -->
+            <div class="lg:col-span-8 xl:col-span-9">
+                <!-- Filter Controls -->
+                <div class="bg-white p-4 rounded-xl shadow-sm mb-6 flex items-center gap-3">
+                    <div class="relative flex-grow">
+                        <i class="fa fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" id="searchInput" placeholder="Search..." class="w-full text-sm sm:text-base pl-9 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                    </div>
+                     <!-- Disclaimer button for mobile -->
+                    <button id="disclaimer-toggle-btn" class="lg:hidden flex-shrink-0 bg-gray-200 text-gray-700 font-semibold py-2 px-3 text-sm rounded-lg hover:bg-gray-300 transition">
+                        Info
+                    </button>
+                </div>
+                
+                <!-- Cards Grid -->
+                <div id="service-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+                    <!-- Cards will be injected here by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Disclaimer Sidebar (Visible on Large Screens) -->
+            <aside class="hidden lg:block lg:col-span-4 xl:col-span-3">
+                <div id="disclaimer-content-desktop" class="bg-white p-5 rounded-xl shadow-sm sticky top-24">
+                    <h3 class="text-lg font-bold text-gray-900 border-b pb-2 mb-3">Disclaimer!</h3>
+                    <div class="space-y-3 text-xs text-gray-600">
+                        <p><strong>PLEASE NOTE:</strong> We are not directly connected to any of the sites without a registered trademark. We are not liable for their change of terms and functions.</p>
+                        <p>If you discover a new site that others may benefit from, please let us know and we will add it to the list, after a thorough research.</p>
+                        <p><span class="text-green-600 font-semibold">GREEN</span> sites are sponsored. <span class="text-red-600 font-semibold">®</span> sites are registered with physical addresses.</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Disclaimer Modal (For Mobile) -->
+    <div id="disclaimer-modal" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-lg w-full max-w-md m-auto">
+            <div id="disclaimer-content-mobile" class="p-5">
+                 <h3 class="text-lg font-bold text-gray-900 border-b pb-2 mb-3">Disclaimer!</h3>
+                 <div class="space-y-3 text-sm text-gray-600 max-h-[60vh] overflow-y-auto">
+                    <p><strong>PLEASE NOTE:</strong> We are not directly connected to any of the sites without a registered trademark. We are not liable for their change of terms and functions.</p>
+                    <p>If you discover a new site that others may benefit from, please let us know and we will add it to the list, after a thorough research.</p>
+                    <p><span class="text-green-600 font-semibold">GREEN</span> sites are sponsored. <span class="text-red-600 font-semibold">®</span> sites are registered with physical addresses.</p>
+                </div>
+                <button id="modal-close-btn" class="mt-4 w-full bg-gray-800 text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-700 transition">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="container mx-auto px-4 py-6 text-center">
+            <p>&copy; 2024 CUDFIRM. All Rights Reserved.</p>
+            <p class="text-xs text-gray-400">Developed by CUDFIRM</p>
+        </div>
+    </footer>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const serviceData = [
+            { title: 'PHOTOGRAPHY', isRegistered: true, description: 'Event planning, weddings, birthdays, parties, pre-ceremonial setups, engagement and surprises. All types of photo practices.', image: 'https://placehold.co/400x200/5f9ea0/ffffff?text=Photography' },
+            { title: 'VIDEO EDITING', isRegistered: false, description: 'Videography for weddings, birthdays, parties, and all events. All types of video practices just like photography, but better.', image: 'https://placehold.co/400x200/ff7f50/ffffff?text=Video' },
+            { title: 'GRAPHIC DESIGN', isRegistered: false, description: 'Creative minds with great photo manipulation skills, to make your work professionally tagged, yet simplified.', image: 'https://placehold.co/400x200/6495ed/ffffff?text=Design' },
+            { title: 'FURNITURE', isRegistered: false, description: 'Custom and pre-made furniture solutions for home and office, built with quality and style in mind.', image: 'https://placehold.co/400x200/deb887/ffffff?text=Furniture' },
+            { title: 'TAILORING', isRegistered: false, description: 'Bespoke tailoring and fashion design services for all occasions, delivering the perfect fit.', image: 'https://placehold.co/400x200/A52A2A/ffffff?text=Tailoring' },
+            { title: 'HAIR STYLIST', isRegistered: true, description: 'Professional hair styling, braiding, and treatment services for all hair types.', image: 'https://placehold.co/400x200/333333/ffffff?text=Stylist' },
+            { title: 'CONTENT MANAGEMENT', isRegistered: false, description: 'Managing your digital content, from social media to website updates, with professional care.', image: 'https://placehold.co/400x200/9932cc/ffffff?text=Content' },
+            { title: 'WRITING', isRegistered: true, description: 'Professional writing services including content creation, copywriting, and technical documentation.', image: 'https://placehold.co/400x200/8fbc8f/ffffff?text=Writing' },
+        ];
+
+        const serviceGrid = document.getElementById('service-grid');
+        const searchInput = document.getElementById('searchInput');
+
+        // NEW: Function to highlight search terms
+        function highlightText(text, query) {
+            if (!query) return text;
+            const regex = new RegExp(`(${query})`, 'gi');
+            return text.replace(regex, '<mark>$1</mark>');
+        }
+
+        function renderCards(filter = '') {
+            serviceGrid.innerHTML = '';
+            const filteredData = serviceData.filter(item => 
+                item.title.toLowerCase().includes(filter.toLowerCase()) || 
+                item.description.toLowerCase().includes(filter.toLowerCase())
+            );
+
+            if (filteredData.length === 0) {
+                serviceGrid.innerHTML = `<p class="text-gray-500 col-span-full">No services found matching your search.</p>`;
+                return;
+            }
+
+            filteredData.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'service-card bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-all duration-300';
+                
+                let registeredBadge = item.isRegistered ? `<span class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full z-10">®</span>` : '';
+
+                // MODIFIED: Apply highlightText function to title and description
+                const highlightedTitle = highlightText(item.title, filter);
+                const highlightedDesc = highlightText(item.description, filter);
+
+                card.innerHTML = `
+                    <div class="relative overflow-hidden">
+                        <img src="${item.image}" alt="${item.title}" class="w-full h-24 sm:h-32 object-cover">
+                        ${registeredBadge}
+                        <div class="card-title-diagonal">${item.title}</div>
+                    </div>
+                    <div class="p-4 pt-6 flex flex-col flex-grow">
+                        <!-- Spacer is removed, padding adjusted -->
+                        <p class="text-gray-600 text-xs mb-3 flex-grow line-clamp-3">${highlightedDesc}</p>
+                        <div class="flex items-center justify-between border-t pt-3 mt-auto">
+                            <div class="flex space-x-2 text-gray-500">
+                                <a href="#" class="hover:text-blue-600 text-sm"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="hover:text-pink-600 text-sm"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="hover:text-blue-400 text-sm"><i class="fab fa-twitter"></i></a>
+                            </div>
+                            <a href="#" class="text-xs font-semibold text-blue-600 hover:text-blue-800">More &rarr;</a>
+                        </div>
+                    </div>
+                `;
+                // NOTE: The card title is not highlighted in the diagonal banner to preserve its design.
+                // If you wanted the main title highlighted, we'd add it to the content area instead.
+                serviceGrid.appendChild(card);
+            });
+        }
+
+        searchInput.addEventListener('keyup', (e) => {
+            renderCards(e.target.value);
+        });
+        
+        const disclaimerModal = document.getElementById('disclaimer-modal');
+        const disclaimerToggleBtn = document.getElementById('disclaimer-toggle-btn');
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+
+        disclaimerToggleBtn.addEventListener('click', () => {
+            disclaimerModal.classList.remove('hidden');
+            disclaimerModal.classList.add('flex');
+        });
+
+        modalCloseBtn.addEventListener('click', () => {
+            disclaimerModal.classList.add('hidden');
+            disclaimerModal.classList.remove('flex');
+        });
+        
+        disclaimerModal.addEventListener('click', (e) => {
+            if (e.target === disclaimerModal) {
+                 modalCloseBtn.click();
+            }
+        });
+
+        renderCards();
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rogate: Interactive Site Blueprint</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!--
+      CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+      Chosen Palette: Rogate Vibrant (Warm Neutrals with Coral, Mint, and Navy Accents)
+      Application Structure Plan: A responsive, single-page dashboard. The core interaction involves a filterable grid of cards, each representing a proposed website tab from the report. A donut chart provides a high-level summary of the tab distribution across strategic tiers. Clicking a card reveals detailed information, and clicking the chart filters the grid. This structure was chosen to provide both a quick overview and deep-dive exploration of the site plan, making the strategic information highly digestible and interactive.
+      Visualization & Content Choices:
+      - Report Info: Tab distribution by tier -> Goal: Inform -> Viz: Donut Chart (Chart.js) -> Interaction: Click a segment to filter grid -> Justification: Provides an immediate, quantitative summary of the plan's structure.
+      - Report Info: List of 20 tabs -> Goal: Organize/Inform -> Viz: Interactive Cards (HTML/CSS/JS) -> Interaction: Click to expand details, filter by tier -> Justification: Allows for easy Browse and detailed exploration of each proposed site section.
+      - Report Info: Tab details (Purpose, Ideas) -> Goal: Inform -> Viz: Text Blocks (JS show/hide) -> Interaction: Revealed on card click -> Justification: Keeps the main view clean while allowing access to detailed information on demand.
+    -->
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .card-detail { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1); }
+        .card.active .card-detail { max-height: 500px; }
+        .chart-container { position: relative; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; height: 300px; max-height: 400px; }
+        @media (min-width: 768px) { .chart-container { height: 350px; } }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900">CUDFIRM</h1>
+            <p class="mt-2 text-lg text-slate-600">The Ultimate Site Blueprint</p>
+        </header>
+
+        <main>
+            <section id="dashboard" class="space-y-12">
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-2">Strategic Overview</h2>
+                    <p class="text-slate-600 mb-6">This dashboard visualizes the proposed 20-tab structure for the Rogate platform. Use the filters and interactive chart to explore the plan.</p>
+                    <div class="chart-container">
+                        <canvas id="tierChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Proposed Tabs</h2>
+                    <div id="filter-buttons" class="flex flex-wrap gap-2 mb-6">
+                        <button data-filter="all" class="filter-btn bg-slate-800 text-white py-2 px-4 rounded-full font-semibold text-sm">All (20)</button>
+                        <button data-filter="Core" class="filter-btn bg-white text-slate-700 py-2 px-4 rounded-full font-semibold text-sm border border-slate-300">Core (4)</button>
+                        <button data-filter="Tier 1" class="filter-btn bg-white text-slate-700 py-2 px-4 rounded-full font-semibold text-sm border border-slate-300">Tier 1: Growth (5)</button>
+                        <button data-filter="Tier 2" class="filter-btn bg-white text-slate-700 py-2 px-4 rounded-full font-semibold text-sm border border-slate-300">Tier 2: Utility (6)</button>
+                        <button data-filter="Tier 3" class="filter-btn bg-white text-slate-700 py-2 px-4 rounded-full font-semibold text-sm border border-slate-300">Tier 3: Fun (5)</button>
+                    </div>
+
+                    <div id="card-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const siteData = [
+            { tier: 'Core', name: 'Home', icon: '🏠', purpose: 'The main "Ask" page. The heart of the brand.', ideas: 'Interactive search bar, showcase of popular services, animated "magic" delivery visual.' },
+            { tier: 'Core', name: 'Explore', icon: '🧭', purpose: 'The gateway to all categories and services.', ideas: 'Visual category browser, featured service providers, trending searches.' },
+            { tier: 'Core', name: 'Account', icon: '�', purpose: 'User profiles, settings, and the contact form.', ideas: 'Order history, saved providers, notification settings.' },
+            { tier: 'Core', name: 'Partner', icon: '🤝', purpose: 'The page for service providers to sign up and manage their profiles.', ideas: 'Easy sign-up form, dashboard for managing gigs and payments, performance analytics.' },
+            { tier: 'Tier 1', name: 'Learn Free', icon: '🎓', purpose: 'A curated directory of high-quality free courses.', ideas: 'Filter by skill (tech, business, creative), links to platforms like Coursera, Google, etc.' },
+            { tier: 'Tier 1', name: 'Get Skilled', icon: '🛠️', purpose: 'A directory of vocational training centers.', ideas: 'Search by location and skill, map view, user reviews and ratings.' },
+            { tier: 'Tier 1', name: 'Gig Board', icon: '💼', purpose: 'A board for freelance jobs and short-term projects.', ideas: 'Post a gig form, search/filter by budget and timeline, internal messaging system.' },
+            { tier: 'Tier 1', name: 'Find Grants', icon: '💰', purpose: 'A curated list of available grants.', ideas: 'Categorized by industry (tech, SME, NGO), deadline reminders, application tips.' },
+            { tier: 'Tier 1', name: 'Events', icon: '🗓️', purpose: 'A calendar of workshops, seminars, and networking events.', ideas: 'Filter by online/offline, city, and topic. Allow users to add events to their calendar.' },
+            { tier: 'Tier 2', name: 'Templates', icon: '📄', purpose: 'The library of free CVs, proposals, invoices, etc.', ideas: 'One-click download, variety of styles, categorized for easy Browse.' },
+            { tier: 'Tier 2', name: 'How-To\'s', icon: '💡', purpose: 'Simple guides for common problems.', ideas: 'Illustrated step-by-step articles, video tutorials, user-submitted guides.' },
+            { tier: 'Tier 2', name: 'Checklists', icon: '✅', purpose: 'Actionable checklists for various tasks.', ideas: 'Interactive checklists that users can save to their account, e.g., "Event Planning Checklist".' },
+            { tier: 'Tier 2', name: 'Rogate Stars', icon: '⭐', purpose: 'The showcase of your best service providers.', ideas: 'Partner of the Month interview, portfolio showcase, video introductions.' },
+            { tier: 'Tier 2', name: 'Love Notes', icon: '💬', purpose: 'The text-message-style testimonials.', ideas: 'Animated message bubbles appearing on screen, short and punchy quotes.' },
+            { tier: 'Tier 2', name: 'Local Guides', icon: '🗺️', purpose: 'Hyper-local content for key cities.', ideas: '"Top 5 Co-working Spaces in Yaba", "Best Places for Business Lunch in VI".' },
+            { tier: 'Tier 3', name: 'Spark', icon: '✨', purpose: 'The random idea generator button.', ideas: 'A single, fun button that generates business ideas, weekend projects, or creative prompts on click.' },
+            { tier: 'Tier 3', name: 'Discover', icon: '🔍', purpose: 'The weekly roundup of cool links and tools.', ideas: 'A curated list of 5 interesting things, presented in a minimalist, magazine-style layout.' },
+            { tier: 'Tier 3', name: 'Deals', icon: '🏷️', purpose: 'Exclusive deals and discounts.', ideas: 'Local name like "Awoof", partnerships with local businesses, time-sensitive offers.' },
+            { tier: 'Tier 3', name: 'Community', icon: '🗣️', purpose: 'A simple forum or Q&A section for users.', ideas: 'Users can ask and answer questions, upvote best answers, earn reputation points.' },
+            { tier: 'Tier 3', name: 'Submit a Tip', icon: '📬', purpose: 'A page for users to submit content.', ideas: 'Simple form to submit a free course, grant, or deal they found. Rewards for top contributors.' }
+        ];
+
+        const tierColors = {
+            'Core': '#1e293b',    // Slate 800
+            'Tier 1': '#f97316',   // Orange 500
+            'Tier 2': '#10b981',   // Emerald 500
+            'Tier 3': '#6366f1'    // Indigo 500
+        };
+
+        const cardGrid = document.getElementById('card-grid');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        let activeFilter = 'all';
+        let chartInstance = null;
+
+        function renderCards() {
+            cardGrid.innerHTML = '';
+            const filteredData = activeFilter === 'all' ? siteData : siteData.filter(item => item.tier === activeFilter);
+
+            filteredData.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card bg-white rounded-xl border border-slate-200 cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1';
+                card.dataset.tier = item.tier;
+
+                card.innerHTML = `
+                    <div class="p-5">
+                        <div class="flex items-center gap-4">
+                            <div class="text-3xl">${item.icon}</div>
+                            <div>
+                                <h3 class="font-bold text-lg text-slate-900">${item.name}</h3>
+                                <p class="text-sm font-semibold" style="color: ${tierColors[item.tier]};">${item.tier}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-detail px-5 pb-5">
+                        <p class="text-sm text-slate-600 mb-2"><strong>Purpose:</strong> ${item.purpose}</p>
+                        <p class="text-sm text-slate-600"><strong>Content Ideas:</strong> ${item.ideas}</p>
+                    </div>
+                `;
+                cardGrid.appendChild(card);
+            });
+
+            document.querySelectorAll('.card').forEach(card => {
+                card.addEventListener('click', () => {
+                    card.classList.toggle('active');
+                });
+            });
+        }
+
+        function handleFilterClick(e) {
+            const filter = e.target.dataset.filter;
+            if (activeFilter === filter) return;
+
+            activeFilter = filter;
+            
+            filterButtons.forEach(btn => {
+                if (btn.dataset.filter === filter) {
+                    btn.classList.add('bg-slate-800', 'text-white');
+                    btn.classList.remove('bg-white', 'text-slate-700');
+                } else {
+                    btn.classList.add('bg-white', 'text-slate-700');
+                    btn.classList.remove('bg-slate-800', 'text-white');
+                }
+            });
+
+            renderCards();
+        }
+
+        function createChart() {
+            const ctx = document.getElementById('tierChart').getContext('2d');
+            const tierCounts = siteData.reduce((acc, item) => {
+                acc[item.tier] = (acc[item.tier] || 0) + 1;
+                return acc;
+            }, {});
+
+            const data = {
+                labels: Object.keys(tierCounts),
+                datasets: [{
+                    label: 'Number of Tabs',
+                    data: Object.values(tierCounts),
+                    backgroundColor: Object.values(tierColors),
+                    borderColor: '#ffffff',
+                    borderWidth: 4,
+                    hoverOffset: 8
+                }]
+            };
+
+            chartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 20,
+                                font: { size: 14, weight: '500' }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.parsed + ' tabs';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    onClick: (event, elements) => {
+                        if (elements.length > 0) {
+                            const clickedLabel = data.labels[elements[0].index];
+                            const buttonToClick = document.querySelector(`.filter-btn[data-filter="${clickedLabel}"]`);
+                            if (buttonToClick) buttonToClick.click();
+                        }
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCards();
+            createChart();
+            filterButtons.forEach(btn => btn.addEventListener('click', handleFilterClick));
+        });
+    </script>
+</body>
+</html>
+�
