@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<div class="app-container">
+<div class="app-container text-capitalize">
   <!-- Left Sidebar -->
   <div class="sidebar-left">
     <div class="sidebar-header">CUDFIRM</div>
@@ -64,11 +64,11 @@
       </div>
 
       <div class="dropdown mobile-widgets">
-        <button class="btn btn-sm btn-outline-light dropdown-toggle dropdown-toggle-center" type="button" data-bs-toggle="dropdown">MENU</button>
+        <button class="btn btn-sm btn-outline-light text-bg-dark dropdown-toggle dropdown-toggle-center" type="button" data-bs-toggle="dropdown">MENU</button>
         <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item btn btn-sm" href="#">Blank</a></li>
-          <li><a class="dropdown-item btn btn-sm" href="#">Services</a></li>
-          <li><a class="dropdown-item btn btn-sm" href="#">About Us</a></li>
+          <li><a class="dropdown-item btn btn-sm" onclick="openTab(event, 'contact-content')">Contact Us</a></li>
+          <li><a class="dropdown-item btn btn-sm" href="services.html">Services</a></li>
+          <li><a class="dropdown-item btn btn-sm" href="about.html">About Us</a></li>
         </ul>
       </div>
     </div>
@@ -109,104 +109,99 @@
 
 
       <section id="tab2" class="tab-content">
-        <p class="card-section">... This is a placeholder for the "Get Skilled" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p>
+        <div class="p-2"><h4>Get Skilled</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Get Skilled" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
       
       <section id="tab3" class="tab-content">
-          <p class="card-section">... This is a placeholder for the "Gig Board" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p>
+        <div class="p-2"><h4>Gig Board</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Gig Board" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
 
-      <section id="tab4" class="tab-content"><div class="p-2"><h4>Find Grants</h4><p class="card card-body alert alert-secondary">... This is a placeholder for the "Find Grants" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
+      <section id="tab4" class="tab-content">
+        <div class="p-2"><h4>Find Grants</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Find Grants" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
 
       <section id="tab5" class="tab-content">
-        <div class="p-2"><h4>Events</h4><p class="card card-body alert alert-secondary">... This is a placeholder for the "Events" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
+        <div class="p-2"><h4>Events</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Events" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
 
       <section id="tab6" class="tab-content">
-        <h6 class="sticky-top"><span class="text-bg-secondary btn-sm opacity-50 badge" type="button">TEMPLATES</span></h6>
-        <div class="row m-2"><div class="col"><div class="card card-body alert alert-secondary"><h5 class="card-title">Card title</h5>... This is a placeholder for the "Templates" tab content. You can add any components you like here, such as text, images, or more complex layouts.</div></div><div class="col"><div class="card card-body alert alert-success"><h5 class="card-title">Card title</h5>... This is a placeholder for the "Templates" tab content. You can add any components you like here, such as text, images, or more complex layouts.</div></div></div>
+        <div class="p-2"><h4>Templates</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Templates" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
 
       <section id="tab7" class="tab-content">
-        <div class="p-2"><h4>How To's</h4><p class="card card-body alert alert-secondary">... This is a placeholder for the "How-To's" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
+        <div class="p-2"><h4>How To's</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "How-To's" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
 
       <section id="tab8" class="tab-content">
-        <div class="p-2"><h4>Checklists</h4><p class="card card-body alert alert-secondary">... This is a placeholder for the "Checklists" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
+        <div class="p-2"><h4>Checklists</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Checklists" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
 
       <section id="tab9" class="tab-content">
-        <h6 class="sticky-top"><span class="opacity-50 badge text-bg-info">Rogate Stars</span></h6>
-        <article class="row">
-          <div class="col"><div class="card card-body alert alert-secondary">... This is a placeholder for the "Rogate Stars" tab content. You can add any components you like here, such as text, images, or more complex layouts.</div></div>
-          <div class="col"><div class="card card-body alert alert-success">... This is a placeholder for the "Rogate Stars" tab content. You can add any components you like here, such as text, images, or more complex layouts.</div></div>
-          <div class="col"><div class="card card-body alert alert-secondary">... This is a placeholder for the "Rogate Stars" tab content. You can add any components you like here, such as text, images, or more complex layouts.</div></div>
-        </article>
+          <div class="p-2"><h4>Our Stars</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Our Stars" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
 
-      <section id="tab10" class="tab-content"><div class="p-2"><h4>Love Notes</h4><p class="card card-body alert alert-secondary">... This is a placeholder for the "Love Notess" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div></section>
+      <section id="tab10" class="tab-content">
+        <div class="p-2"><h4>Love Notes</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Love Notess" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div></section>
 
 
       <section id="tab11" class="tab-content">
-        <div class="p-2"><h4>Local Guides</h4><p class="card card-body alert alert-secondary">... This is a placeholder for the "Local Guides" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
+        <div class="p-2"><h4>Local Guides</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Local Guides" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
 
       <section id="tab12" class="tab-content">
-        <div class="p-2"><h4>Spark</h4><p class="card card-body alert alert-secondary">... This is a placeholder for the "Spark" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
+        <div class="p-2"><h4>Spark</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Spark" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
 
       <section id="tab13" class="tab-content">
-        <div class="p-2"><h4>Discover</h4><p class="card card-body alert alert-secondary">... This is a placeholder for the "Discover" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
+        <div class="p-2"><h4>Discover</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Discover" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
 
       <section id="tab14" class="tab-content">
-        <div class="p-2"><h4>Deals</h4><p class="card card-body alert alert-secondary">... This is a placeholder for the "Deals" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
+        <div class="p-2"><h4>Deals</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Deals" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
 
       <section id="tab15" class="tab-content">
-        <div class="p-2"><h4>Community</h4><p class="card card-body alert alert-secondary">... This is a placeholder for the "Community" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
+        <div class="p-2"><h4>Community</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Community" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
 
       <section id="tab16" class="tab-content">
-        <div class="p-2"><h4>Submit A Tip</h4><p class="card card-body alert alert-secondary">... This is a placeholder for the "Submit A Tip" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
+        <div class="p-2"><h4>Submit A Tip</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Submit A Tip" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
 
       <section id="tab17" class="tab-content">
-        <div class="p-2"><h4>Tab 17</h4><p class="card card-body alert alert-secondary">... This is a placeholder for the "Tab 17" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
+        <div class="p-2"><h4>Tab 17</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Tab 17" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
 
       <section id="tab18" class="tab-content">
-        <div class="p-2"><h4>Tab 18</h4><p class="card card-body alert alert-secondary">... This is a placeholder for the "Tab 18" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
+        <div class="p-2"><h4>Tab 18</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Tab 18" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
 
       <section id="tab19" class="tab-content">
-        <div class="p-2"><h4>Tab 19</h4><p class="card card-body alert alert-secondary">... This is a placeholder for the "Tab 19" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
+        <div class="p-2"><h4>Tab 19</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Tab 19" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
 
       <section id="tab20" class="tab-content">
-        <h6 class="sticky-top"><span class="opacity-50 badge text-bg-info">Jumbotron</span></h6>
-        <div class="bg-light rounded-3 mb-4 p-3 p-md-5"><h1 class="display-5 fw-bold">Hello, World!</h1><p class="col-md-8 fs-5 fs-md-4">I Am Super Excited To Have You On Our Platform, And Do Really Hope We Give You Services That Will Satisfy Your Needs, Wants, Urge, Curiousity, Whatever That Is.</p><hr class="my-4"><p>For Now, These Pages Are Blank To Be Filled With More Thirst.</p><a class="btn btn-primary btn-lg" href="/about.html" role="button">Learn more</a></div>
+        <div class="p-2"><h4>Tab 20</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Tab 20" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
-
+<!-- ########### HOME PAGE BEGINS ############### -->
       <section id="home-content" class="tab-content p-1 m-0">
         <div class="stories bg-light">
           <div class="_story scroll-container d-flex overflow-auto p-0 m-0" style="white-space: nowrap;">
@@ -226,7 +221,7 @@
           </div>
         </div>
         <hr class="my-2">
-        <div class="row icon-grid row-cols-4 row-cols-sm-5 row-cols-md-6 row-cols-lg-8">
+        <div class="row icon-grid row-cols-3 row-cols-sm-5 row-cols-md-6 row-cols-lg-8">
             <div class="col icon-item"><div class="icon-box"><i class="bi bi-bar-chart"></i></div><div class="icon-label">Box 1</div></div>
             <div class="col icon-item"><div class="icon-box"><i class="bi bi-bar-chart-fill"></i></div><div class="icon-label">Box 2</div></div>
             <div class="col icon-item"><div class="icon-box"><i class="bi bi-bar-chart-line"></i></div><div class="icon-label">Box 3</div></div>
@@ -249,19 +244,48 @@
           <div class="container-footer"><p>Develop by <a class="container-footer__link" href="#">CUDFIRM </a> | Copyright &copy; 2025</p></div>
         </footer>
       </section>
+<!-- ########### HOME PAGE ENDS ############### -->
 
+
+<!-- ########### EXPLORE PAGE BEGINS ############### -->
       <section id="explore-content" class="tab-content">
-        <h6 class="sticky-top"><span class="text-bg-warning btn-sm opacity-50 badge" role="button" data-bs-toggle="modal" data-bs-target="#Explore">Read Me</span></h6>
-        <div class="modal fade" id="Explore" tabindex="-1" aria-labelledby="ExploreLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header text-bg-info bg-opacity-25"><h5 class="modal-title" id="ExploreLabel">Explore</h5><button type="button" class="btn-close btn btn-danger" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><strong>Purpose:</strong> The"Explore" page. The heart of the brand.<br/><br/><strong>Content Idea:</strong> The Information About The Explore Page Content. This is where users can find various resources, tips, and guides to help them navigate the platform and make the most of their experience.<hr/><br/>Stay Tuned for more updates and features on the Explore page. We are constantly working to enhance your experience and provide valuable content that meets your needs.</div><div class="modal-footer"><button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button></div></div></div></div><br/><div class="alert alert-light" role="alert"><h4 class="alert-heading">Explore Page Content</h4></div>
+        <h6 class="sticky-top"><span class="text-bg-primary btn-sm opacity-50 badge" type="button">Explore</span></h6>
+         <div class="bg-light rounded-3 mb-4 p-3 p-md-5">
+          <h3 class="display-5 fw-bold">Our website is currently under construction.</h3>
+          <p class="col-md-8 fs-5 fs-md-4">We're busy hammering and sawing away to build you an awesome online experience. Please pardon our digital dust!
+            <br/><br/>
+          In the meantime, we'd love to hear your ideas. What features and content would you like to see here? Your suggestions are the blueprints for our success..</p>
+          <hr class="my-4">
+          <p>Thanks for stopping by!</p>
+          <a class="btn btn-primary btn-md" onclick="openTab(event, 'contact-content')" role="button">Lets Talk</a>
+        </div>
       </section>
+<!-- ########### EXPLORE PAGE ENDS ############### -->
 
-      <section id="partner-content" class="tab-content"><h6 class="sticky-top"><span class="opacity-50 badge text-bg-primary">Partner</span></h6><div class="alert alert-light" role="alert"><h4 class="alert-heading">Partner Page Content</h4></div></section>
 
+
+<!-- ########### PARTNER PAGE BEGINS ############### -->
+      <section id="partner-content" class="tab-content">
+        <h6 class="sticky-top"><span class="text-bg-primary btn-sm opacity-50 badge" type="button">Partner</span></h6>
+         <div class="bg-light rounded-3 mb-4 p-3 p-md-5">
+          <h3 class="display-5 fw-bold">Whoops! You've caught us before we're ready.</h3>
+          <p class="col-md-8 fs-5 fs-md-4">Our new website is still brewing. We're adding a dash of awesome and a sprinkle of amazing.
+            <br/><br/>
+          Got a brilliant idea for a feature or some content you'd love to see? Don't be shy! Help us build something you'll love. We're all ears (and code)</p>
+          <hr class="my-4">
+          <p>Check back soon for the big reveal!</p>
+          <a class="btn btn-primary btn-md" onclick="openTab(event, 'contact-content')" role="button">Lets Talk</a>
+        </div>
+      </section>
+<!-- ########### PARTNER PAGE ENDS ############### -->
+
+
+<!-- ########### CONTACT PAGE BEGINS ############### -->
       <section id="contact-content" class="tab-content">
         <h6 class="sticky-top"><span class="opacity-50 badge text-bg-primary">Contact</span></h6>
         <div class="contact-container">
-    <h4 class="contact-header">How can we help you today?</h4>
-    <p class="contact-subheader">Send us a detailed message or use a quick contact option. We'll handle the rest.</p>
+    <h4 class="contact-header">How can we make your day?</h4>
+    <p class="contact-subheader text-center">Looking for a specific service, want to share some feedback, or have a brilliant idea? Send it our way and we'll get right on it.</p>
     <div class="row g-4">
         <div class="col-12 col-lg-8">
 <form name="contact" method="POST" data-netlify="true" action="/success.html">
@@ -306,7 +330,9 @@
           <div class="container-footer"><p>Develop by <a class="container-footer__link" href="#">CUDFIRM </a> | Copyright &copy; 2025</p></div>
         </footer>
       </section>
-    </main>
+<!-- ########### CONTACT PAGE ENDS ############### -->
+
+</main>
 
     <!-- Footer Navigation -->
     <section class="content-footer">
