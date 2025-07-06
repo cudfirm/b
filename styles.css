@@ -142,7 +142,7 @@ p { font-size: clamp(12px, 1.7vw, 14px); }
 }
 .content-header {
   padding: .5rem 1rem;
-  background-color: #25547134;
+  background-color: #0081b8f1;
   border-bottom: 1px solid var(--border-color);
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   display: flex;
@@ -338,6 +338,7 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
   .grid-item div { font-size: 10px; font-weight: 500; word-break: break-word; }
   .icon-grid { --bs-gutter-y: 1rem; --bs-gutter-x: 0.5rem; }
   .icon-box { padding: 1rem; margin-bottom: 0.5rem; aspect-ratio: 1 / 1; }
+  #searchInput.active { width: 8rem; }
 }
 
 @media (min-width: 768px) {
