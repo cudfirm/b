@@ -236,10 +236,10 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
 
 /* Market Tab Grid (Gig Board) */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); gap: 8px; }
-.grid-item { text-align: center; color: #354e80; }
+.grid-item { text-align: center; color: #354e80;}
 .grid-item .text { text-align: center; color: #142f57; font-size: 12px; }
 .grid-item .text:hover { text-align: center; color: #94b095; font-weight: 600; font-size: 12px; }
-.grid-item img { width: 100%; height: auto; border-radius: 12px; margin-bottom: 4px; }
+.grid-item img { width: 100%; height: auto; border-radius: 12px; margin-bottom: 4px; padding: 2px; background-color: #003366; }
 .grid-item div { font-size: 12px; font-weight: 500; word-break: break-word; }
 .card-section { background: var(--color-white); border-radius: 10px; margin: 0 .1rem .3rem; padding: .5rem; }
 .card-section .header { display: flex; justify-content: space-between; align-items: center; font-size: 14px; margin-bottom: 8px; }
