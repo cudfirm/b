@@ -121,7 +121,7 @@ p { font-size: clamp(12px, 1.7vw, 14px); }
   color: var(--text-color);
   transition: all 0.2s ease-in-out;
 }
-.tab-button:hover { background-color: var(--highlight-color); }
+.tab-button:hover { background-color: #0d5483cb; }
 .tab-button.active {
     background-color: var(--secondary-color);
     color: var(--primary-color-dark);
@@ -339,6 +339,9 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
   .icon-grid { --bs-gutter-y: 1rem; --bs-gutter-x: 0.5rem; }
   .icon-box { padding: 1rem; margin-bottom: 0.5rem; aspect-ratio: 1 / 1; }
   #searchInput.active { width: 8rem; }
+  .quote { 
+  background-size: contain;
+}
 }
 
 @media (min-width: 768px) {
@@ -368,9 +371,33 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
 }
 .container-footer__link{ color:var(--color-grey-dark-1); text-decoration:none; }
 .container-footer__link:hover{ color:var(--color-teal-primary); }
-.bbgpc { background: var(--color-white); color: var(--color-black); margin-top: 20px; margin-bottom: 20px; border-radius: 15px; box-shadow: 7px 8px 7px 0px rgba(0, 0, 0, 0.1); }
-.quote { color: var(--color-black); font-weight: lighter; padding: 2px; padding-left: 20px; background: var(--color-grey-light-2) url(http://jentblue.xtgem.com/bg_new_content_spring.png); background-position: bottom 100%; border-bottom: 0.7px solid var(--color-black); border-left: 8px solid var(--color-grey-light-1); border-radius: 10px; }
-.contact { background: rgba(0,0,0,0.5); color: var(--color-white); margin: 25px 15px 5px; padding: 20px 12px 12px; text-transform: capitalize; border-left: 2.3px solid var(--color-white); border-right: 2.3px solid var(--color-white); }
+.bbgpc { 
+  background: var(--color-white);
+  color: var(--color-black);
+  margin-top: .02rem;
+  margin-bottom: .03rem;
+  border-radius: 15px; 
+  box-shadow: 7px 8px 7px 0px rgba(0, 0, 0, 0.1); 
+}
+.quote { 
+  color: var(--color-black); 
+  font-weight: lighter; 
+  padding: .5rem; 
+  padding-left: 20px; 
+  background-image: url(quote.png); 
+  background-size: 100%;
+  background-position: bottom 100%;
+  border-bottom: 0.7px solid var(--color-black); 
+  border-left: 8px solid var(--color-grey-light-1); 
+  border-radius: 10px; 
+}
+.contact { 
+  background: rgba(0,0,0,0.5); 
+  color: var(--color-white); 
+  margin: .5rem; 
+  padding: 10px auto;
+  border-left: 2.3px solid #1f83ef;
+}
 .whitenho { background: var(--color-white); color: var(--color-black); padding: 5px; padding-top: 10px; padding-bottom: 10px; margin: 1px; border-bottom: 2.8px solid var(--border-color); border-top: .2rem solid var(--color-blue-light-1); text-align: justify; }
 .bgcud1 { background-color:var(--color-grey-mid-1); color: var(--color-grey-dark-2); background-size:cover; } 
 .bgcud7 { background: url("") center no-repeat var(--color-white); background-size: cover; } 
