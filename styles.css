@@ -240,7 +240,7 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
   font-weight: bold;
   border-top: 3px solid var(--primary-color);
   background-color: #25547134; /* var(--highlight-color); */
-  border-radius: 11px;
+  border-radius: 9px;
 }
 
 /* ** RESTORED: All original styles below this line, with color variables applied where appropriate ** */
@@ -348,13 +348,24 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
 }
 
 /* FOOTER FOR HOME PAGE & OLD CSS */
-.icons-social{ padding:5px; }
-.list-social{ text-align:center; padding:0; }
+.icons-social{ padding:1px; }
+.list-social{ text-align: justify; padding:0; }
 .icons-social__item{ display:inline-block; transition:all 0.3s; }
 .icons-social__item:hover { transform:rotate(10deg); }
 .icons-social__link{ font-size:23px; color:var(--color-grey-dark-1); padding:10px; }
 .icons-social__link:hover{ color:var(--color-teal-primary); }
-.footin{ display: block; position: relative; bottom: 0; width: 100%; height: auto; padding: 5px 10px; color:var(--color-grey-dark-1); text-align:center; background:var(--color-grey-light-2); margin:1rem 0 0 0; }
+.footin{ 
+  display: inline-block; 
+  position: relative;
+  width: auto; 
+  height: auto; 
+  padding: 2px 5px; 
+  bottom: 0;
+  color:var(--color-grey-dark-1); 
+  text-align:center; 
+  background:var(--color-grey-light-2); 
+  margin: .5rem 0 0 0; 
+}
 .container-footer__link{ color:var(--color-grey-dark-1); text-decoration:none; }
 .container-footer__link:hover{ color:var(--color-teal-primary); }
 .bbgpc { background: var(--color-white); color: var(--color-black); margin-top: 20px; margin-bottom: 20px; border-radius: 15px; box-shadow: 7px 8px 7px 0px rgba(0, 0, 0, 0.1); }
