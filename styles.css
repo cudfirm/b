@@ -245,7 +245,7 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
 
 /* ** RESTORED: All original styles below this line, with color variables applied where appropriate ** */
 
-/* Market Tab Grid (Gig Board) */
+/* Market Tab Grid (Learn Free) */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); gap: 8px; }
 .grid-item { text-align: center; color: var(--color-blue-dark-1);}
 .grid-item .text { text-align: center; color: var(--color-blue-dark-2); font-size: 12px; }
@@ -290,10 +290,10 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
 /* Stories Tab Styling */
 .stories{ width: 100%; height: 150px; font-weight: bold; border-bottom: 5px solid var(--color-grey-dark-2); position: relative; margin-top: .5rem; margin-bottom: .5rem; overflow-y: hidden; overflow-x: auto; }
 ._story{ width: 100%; height: 100%; font-weight: bold; display: flex; align-items: center; padding: 0 5px; }
-.s-card{ width: 100px; height: 95%; font-weight: bold; border: 2px solid var(--color-grey-dark-2); border-radius: 12px 0; overflow: hidden; position: relative; min-width: 100px; margin-right: 3px; margin-left: 3px; cursor: pointer; }
+.s-card{ width: 100px; height: 95%; font-weight: bold; border: 2px solid var(--color-grey-dark-2); border-radius: 100%; overflow: hidden; position: relative; min-width: 100px; margin-right: 3px; margin-left: 3px; cursor: pointer; }
 .s-card0{ width: 50px; height: 45%; font-weight: bold; border: 1px solid var(--color-grey-dark-2); border-radius: 15px; overflow: hidden; position: relative; min-width: 50px; margin-right: 3px; margin-left: 3px; cursor: pointer; }
 .s-card0:hover{ transform: scale(1.05); transition: transform 0.2s; background-color: var(--color-teal-light-1); }
-.s-card img{ width: 100%; height: 100%; background-color: var(--color-blue-light-1); color: var(--color-white); border: 1px solid var(--color-grey-dark-2); border-radius: 12px 0; }
+.s-card img{ width: 100%; height: 100%; background-color: var(--color-blue-light-1); color: var(--color-white); border: 1px solid transparent; border-radius: 100%; }
 .s-card img:hover{ transform: scale(1.05); transition: transform 0.2s; }
 .s-name{ width: 100%; height: 40%; font-weight: bold; z-index: 2; position: absolute; bottom: 0; display: flex; justify-content: center; align-items: center; color: var(--color-white); background-image: linear-gradient(to top,var(--color-black) 5%,transparent); }
 .s-name>span{ margin-left: 5px; font-family: sans-serif, Georgia; font-size: .6rem; }
