@@ -154,7 +154,7 @@ p { font-size: clamp(12px, 1.7vw, 14px); }
   transition: opacity 0.3s ease-in-out;
 }
 .tab-content { display: none; }
-.tab-content.active { display: block; }
+.tab-content.active { display: block;}
 
 /* Right Sidebar */
 .sidebar-right {
@@ -321,7 +321,7 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
 @media (max-width: 767px) {
   .sidebar-right { display: none; }
   .mobile-widgets { display: block; }
-  .mobile-widgets a:hover { background-color: var(--color-white); color: var(--color-black); font-weight: bold; border-left: .31rem solid var(--active-border); }
+  .mobile-widgets a:hover { background-color: #c7e1fd; color: var(--color-black); font-weight: bold; border-left: .31rem solid var(--active-border); }
   .sidebar-left { flex: 0 0 18%; }
   .sidebar-tabs .tab-button { padding: 0.8rem 0.5rem; font-size: 11px; text-align: center; font-weight: 500; }
   .card-body { display: flex; flex-direction: column; gap: 8px; margin: 0.01rem; }
@@ -339,9 +339,6 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
   .icon-grid { --bs-gutter-y: 1rem; --bs-gutter-x: 0.5rem; }
   .icon-box { padding: 1rem; margin-bottom: 0.5rem; aspect-ratio: 1 / 1; }
   #searchInput.active { width: 8rem; }
-  .quote { 
-  background-size: contain;
-}
 }
 
 @media (min-width: 768px) {
@@ -379,7 +376,19 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
   border-radius: 15px; 
   box-shadow: 7px 8px 7px 0px rgba(0, 0, 0, 0.1); 
 }
-.quote { 
+.quote1 { /* For Small Boxes */
+  color: var(--color-black); 
+  font-weight: lighter; 
+  padding: .5rem; 
+  padding-left: 20px; 
+  background-image: url(quote.png); 
+  background-size: auto;
+  background-position: bottom 100%;
+  border-bottom: 0.7px solid var(--color-black); 
+  border-left: 8px solid var(--color-grey-light-1); 
+  border-radius: 10px; 
+}
+.quote2 { /* For Large Boxes */
   color: var(--color-black); 
   font-weight: lighter; 
   padding: .5rem; 
@@ -387,12 +396,13 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
   background-image: url(quote.png); 
   background-size: 100%;
   background-position: bottom 100%;
+  background-clip: padding-box;
   border-bottom: 0.7px solid var(--color-black); 
   border-left: 8px solid var(--color-grey-light-1); 
   border-radius: 10px; 
 }
 .contact { 
-  background: rgba(0,0,0,0.5); 
+  background: rgba(64, 99, 168, 0.5); 
   color: var(--color-white); 
   margin: .5rem; 
   padding: 10px auto;
