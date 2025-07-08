@@ -29,7 +29,7 @@
   --color-teal-dark-2: #004D40;   /* Deepest teal */
 
   /* Semantic Colors from User's Original Request */
-  --primary-color: #003366; /* Using a dark blue from the new palette */
+  --primary-color: #354455;/* #003366 */ /* Using a dark blue from the new palette */
   --primary-color-dark: #002147; /* A slightly darker variant */
   --secondary-color: var(--color-grey-light-1);
   --background-color: var(--color-grey-light-2);
@@ -376,6 +376,18 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
   border-radius: 15px; 
   box-shadow: 7px 8px 7px 0px rgba(0, 0, 0, 0.1); 
 }
+.quote0 { /* Mixed Boxes */
+  color: var(--color-black); 
+  font-weight: lighter; 
+  padding: .5rem; 
+  padding-left: 20px; 
+  background-image: url(quote0.png); 
+  background-size: contain;
+  background-position: bottom 100%;
+  border-bottom: 0.7px solid var(--color-black); 
+  border-left: 8px solid var(--primary-color); 
+  border-radius: 10px; 
+}
 .quote1 { /* For Small Boxes */
   color: var(--color-black); 
   font-weight: lighter; 
@@ -385,7 +397,7 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
   background-size: auto;
   background-position: bottom 100%;
   border-bottom: 0.7px solid var(--color-black); 
-  border-left: 8px solid var(--color-grey-light-1); 
+  border-left: 8px solid var(--primary-color); 
   border-radius: 10px; 
 }
 .quote2 { /* For Large Boxes */
@@ -398,7 +410,7 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
   background-position: bottom 100%;
   background-clip: padding-box;
   border-bottom: 0.7px solid var(--color-black); 
-  border-left: 8px solid var(--color-grey-light-1); 
+  border-left: 8px solid var(--primary-color); 
   border-radius: 10px; 
 }
 .contact { 
@@ -406,7 +418,7 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
   color: var(--color-white); 
   margin: .5rem; 
   padding: 10px auto;
-  border-left: 2.3px solid #1f83ef;
+  border-left: 2.3px solid #354455;
 }
 .whitenho { background: var(--color-white); color: var(--color-black); padding: 5px; padding-top: 10px; padding-bottom: 10px; margin: 1px; border-bottom: 2.8px solid var(--border-color); border-top: .2rem solid var(--color-blue-light-1); text-align: justify; }
 .bgcud1 { background-color:var(--color-grey-mid-1); color: var(--color-grey-dark-2); background-size:cover; } 
