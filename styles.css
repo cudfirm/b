@@ -358,7 +358,7 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
 .icon-label { font-size: 0.875rem; color: var(--color-grey-mid-2); font-weight: 500; }
 .icon-item.active .icon-label { color: var(--primary-color); }
 .icon-item.active .icon-box i { color: var(--primary-color); }
-#home-content { background-color: var(--color-white); padding: .5rem; }
+#blog-content { background-color: var(--color-white); padding: .5rem; }
 
 /* Stories Tab Styling */
 .stories{ width: 100%; height: 150px; font-weight: bold; border-bottom: 5px solid var(--color-grey-dark-2); position: relative; margin-top: .5rem; margin-bottom: .5rem; background-color: #aec0cdcb; overflow-y: hidden; overflow-x: auto; }
@@ -374,12 +374,12 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
 .sticky-card { position: sticky; left: 0; z-index: 4; background: var(--color-white); }
 
  /* ADDED: Scoped styles from explore.html to prevent conflicts */
-    /* Styles from explore.html, scoped to #partner-content */
-    #partner-content {
+    /* Styles from explore.html, scoped to #explore-content */
+    #explore-content {
         background-color: #f0f2f5; /* Light grey background from original */
     }
 
-    #partner-content .pro-badge {
+    #explore-content .pro-badge {
         background-color: #ffc107;
         color: #3d2c00;
         font-size: 10px;
@@ -390,7 +390,7 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
     }
 
     /* Scoped styling for the icon list items to avoid conflict with global .icon-item styles */
-    #partner-content .icon-item-explore { /* RENAMED to avoid any possible conflict */
+    #explore-content .icon-item-explore { /* RENAMED to avoid any possible conflict */
         background-color: #ffffff;
         border: 1px solid #e5e7eb;
         border-radius: 0.75rem;
@@ -404,25 +404,25 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
         cursor: pointer;
     }
     
-    #partner-content .icon-item-explore:hover {
+    #explore-content .icon-item-explore:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
-    #partner-content .icon-item-explore i {
+    #explore-content .icon-item-explore i {
         color: #4b5563;
         font-size: 1.125rem;
         width: 2rem;
     }
     
-    #partner-content .icon-item-explore span {
+    #explore-content .icon-item-explore span {
          color: #1f2937;
          font-size: 0.875rem;
          font-weight: 500;
     }
 
     /* Scoped styling for the 'View more' button */
-    #partner-content .view-more-btn {
+    #explore-content .view-more-btn {
         background-color: #f0f2f5;
         border: 1px solid #d1d5db;
         border-radius: 0.75rem;
@@ -435,7 +435,7 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
         transition: background-color 0.2s ease, color 0.2s ease;
     }
     
-    #partner-content .view-more-btn:hover {
+    #explore-content .view-more-btn:hover {
         background-color: #e5e7eb;
     }
 

@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>CUDFIRM INCORPORATED</title>
 
-  <!-- MODIFIED: Updated Font Awesome to the newer version from explore.html -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
@@ -64,7 +63,7 @@
       <div class="dropdown mobile-widgets">
         <button class="btn btn-sm btn-outline-light text-bg-dark dropdown-toggle dropdown-toggle-center" type="button" data-bs-toggle="dropdown">MENU</button>
         <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item btn btn-sm" onclick="openTab(event, 'contact-content')">Contact Us</a></li>
+          <li><a class="dropdown-item btn btn-sm" onclick="openTab(event, 'connect-content')">Contact Us</a></li>
           <li><a class="dropdown-item btn btn-sm" href="services.html">Services</a></li>
           <li><a class="dropdown-item btn btn-sm" href="about.html">About Us</a></li>
         </ul>
@@ -209,7 +208,7 @@
         <div class="p-2"><h4>Tab 20</h4><p class="card card-body alert alert-secondary">This is a placeholder for the "Tab 20" tab content. You can add any components you like here, such as text, images, or more complex layouts.</p></div>
       </section>
 
-      <section id="home-content" class="tab-content p-1 m-0">
+      <section id="blog-content" class="tab-content p-1 m-0">
         <div class="stories mt-0 mr-0 mb-2 ml-0 rounded-2">
           <div class="_story scroll-container d-flex overflow-auto p-0 m-0" style="white-space: nowrap;">
             <div class="s-card0 _myStory sticky-card" id="stcard"><span class="s-name"></span></div>
@@ -252,8 +251,8 @@
       </section>
 
 
-      <section id="explore-content" class="tab-content">
-        <h6 class="sticky-top"><span class="text-bg-primary btn-sm opacity-50 badge" type="button">Explore</span></h6>
+      <section id="forum-content" class="tab-content">
+        <h6 class="sticky-top"><span class="text-bg-primary btn-sm opacity-50 badge" type="button">Forum</span></h6>
         <hr class="my-2 w-25">
          <div class="bg-light rounded-3 mb-4 p-3 p-md-5 quote0">
           <h3 class="display-6 fw-bold">Our website is currently under construction.</h3>
@@ -263,7 +262,7 @@
                 In the meantime, we'd love to hear your ideas. What features and content would you like to see here? Your suggestions are the blueprints for our success..</p>
              <hr class="my-4">
            <p>Thanks for stopping by!</p>
-          <a class="btn btn-primary btn-md" onclick="openTab(event, 'contact-content')" role="button">Lets Talk</a>
+          <a class="btn btn-primary btn-md" onclick="openTab(event, 'connect-content')" role="button">Lets Talk</a>
          </div>
          <footer class="footin" id="footin">
           <div class="icons-social"><article class="list-social" id="sm"><span class="icons-social__item" id="sm"><a class="icons-social__link" href="#"><i class="icons-social__i fab fa-codepen"></i></a></span><span class="icons-social__item" id="sm"><a class="icons-social__link" href="#"><i class="icons-social__i fab fa-instagram"></i></a></span><span class="icons-social__item" id="sm"><a class="icons-social__link" href="#"><i class="icons-social__i fab fa-facebook"></i></a></span><span class="icons-social__item" id="sm"><a class="icons-social__link" href="#"><i class="icons-social__i fab fa-twitter"></i></a></span><span class="icons-social__item" id="sm"><a class="icons-social__link" href="#"><i class="icons-social__i fab fa-linkedin"></i></a></span></article>
@@ -271,18 +270,14 @@
         </footer>
       </section>
 
-      <!-- MODIFIED: Content from explore.html is now inside this section -->
-      <!-- Added Tailwind padding classes and the max-width container to match original look -->
-      <section id="partner-content" class="tab-content p-4 sm:p-6 md:p-8">
+      <section id="explore-content" class="tab-content p-4 sm:p-6 md:p-8">
         <div class="max-w-4xl mx-auto">
-            <!-- CLASSIC REGULAR SECTION -->
             <section>
                 <h2 class="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">
                     Classic Regular
                 </h2>
                 
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                    <!-- Icon items are dynamically generated here -->
                     <script>
                         const classicRegularIcons = [
                             { name: 'house', pro: true, icon: 'fa-house' },
@@ -314,7 +309,6 @@
                         });
                     </script>
                     
-                    <!-- View More Button -->
                     <a href="#" class="view-more-btn">
                         <span>View more</span>
                         <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -322,14 +316,12 @@
                 </div>
             </section>
 
-            <!-- CLASSIC LIGHT SECTION -->
             <section class="mt-12">
                 <h2 class="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">
                     Classic Light
                 </h2>
                 
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                    <!-- Icon items are dynamically generated here -->
                     <script>
                         const classicLightIcons = [
                             { name: 'house', pro: true, icon: 'fa-house' },
@@ -355,8 +347,8 @@
         </div>
       </section>
 
-      <section id="contact-content" class="tab-content">
-        <h6 class="sticky-top"><span class="opacity-50 badge text-bg-primary">Contact</span></h6>
+      <section id="connect-content" class="tab-content">
+        <h6 class="sticky-top"><span class="opacity-50 badge text-bg-primary">Connect</span></h6>
         <div class="contact-container">
           <h4 class="contact-header">How can we make your day?</h4>
           <p class="contact-subheader text-center">Looking for a specific service, want to share some feedback, or have a brilliant idea? Send it our way and we'll get right on it.</p>
@@ -402,25 +394,25 @@
 
     <section class="content-footer">
       <div class="footer-nav">
-        <div class="nav-item" onclick="openTab(event, 'home-content')" data-index="0">
-          <i class="bi bi-house"></i>
-          <span class="nav-label">Home</span>
-        </div>
-        <div class="nav-item" onclick="openTab(event, 'tab1')" data-index="1">
+        <div class="nav-item" onclick="openTab(event, 'blog-content')" data-index="0">
           <i class="bi bi-list"></i>
-          <span class="nav-label">Categories</span>
+          <span class="nav-label">Blog</span>
         </div>
-        <div class="nav-item" onclick="openTab(event, 'explore-content')" data-index="2">
+        <div class="nav-item" onclick="openTab(event, 'explore-content')" data-index="1">
           <i class="bi bi-door-open"></i>
           <span class="nav-label">Explore</span>
         </div>
-        <div class="nav-item" onclick="openTab(event, 'partner-content')" data-index="3">
-          <i class="bi bi-collection"></i>
-          <span class="nav-label">Partner</span>
+        <div class="nav-item" onclick="openTab(event, 'tab1')" data-index="2">
+          <i class="bi bi-house"></i>
+          <span class="nav-label">Home</span>
         </div>
-        <div class="nav-item" onclick="openTab(event, 'contact-content')" data-index="4">
+        <div class="nav-item" onclick="openTab(event, 'forum-content')" data-index="3">
+          <i class="bi bi-collection"></i>
+          <span class="nav-label">Forum</span>
+        </div>
+        <div class="nav-item" onclick="openTab(event, 'connect-content')" data-index="4">
           <i class="bi bi-person-check"></i>
-          <span class="nav-label">Contact</span>
+          <span class="nav-label">Connect</span>
         </div>
       </div>
     </section>

@@ -174,14 +174,14 @@ function filterAndReorderContent(term) {
                 openTab(null, activeTabIdBeforeSearch); 
             } else {
                 // Fallback to home if no tab was active
-                openTab(null, 'home-content');
+                openTab(null, 'blog-content');
             }
             activeTabIdBeforeSearch = null; // Reset for the next search
         } else {
             // This is a new or ongoing search
             if (activeTabIdBeforeSearch === null) {
                 const activeContent = document.querySelector('.tab-content.active');
-                activeTabIdBeforeSearch = activeContent ? activeContent.id : 'home-content';
+                activeTabIdBeforeSearch = activeContent ? activeContent.id : 'blog-content';
             }
             
             // Deactivate all tabs to show search results over everything
@@ -217,7 +217,7 @@ function filterAndReorderContent(term) {
 
 // This runs once the entire page is loaded
 document.addEventListener('DOMContentLoaded', function () {
-    const homeTabButton = document.querySelector('.nav-item[onclick*="home-content"]');
+    const homeTabButton = document.querySelector('.nav-item[onclick*="tab1"]');
     if (homeTabButton) homeTabButton.click();
     
     const contentMain = document.querySelector('.content-main');
