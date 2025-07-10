@@ -50,8 +50,8 @@
 /* Reset and Base Styles */
 * { box-sizing: border-box; }
 html {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 87.5%; /* 14px */
+  font-weight: normal
 }
 body {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
@@ -87,9 +87,14 @@ p { font-size: clamp(12px, 1.7vw, 14px); }
 /* Main App Layout */
 .app-container { display: flex; height: 100dvh; width: 100vw; }
 
+/* MODIFIED: This new rule hides the sidebar when the .sidebar-hidden class is present */
+.app-container.sidebar-hidden .sidebar-left {
+  display: none;
+}
+
 /* Left Sidebar */
 .sidebar-left {
-  flex: 0 0 12%;
+  flex: 0 0 10%;
   display: flex;
   flex-direction: column;
   background-color: var(--background-sidebar);
@@ -114,6 +119,7 @@ p { font-size: clamp(12px, 1.7vw, 14px); }
   border: none;
   background-color: var(--color-white);
   text-align: center;
+  align-items: center;
   cursor: pointer;
   outline: none;
   border-bottom: 1px solid var(--border-color);
@@ -121,7 +127,7 @@ p { font-size: clamp(12px, 1.7vw, 14px); }
   color: var(--text-color);
   transition: all 0.2s ease-in-out;
 }
-.tab-button:hover { background-color: #0d5483cb; }
+.tab-button:hover { background-color: #0d5483cb; color: #a3dbf7; }
 .tab-button.active {
     background-color: var(--secondary-color);
     color: var(--primary-color-dark);
@@ -136,6 +142,7 @@ p { font-size: clamp(12px, 1.7vw, 14px); }
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  padding: 0px;
 }
 .content-header {
   padding: .5rem 1rem;
@@ -152,18 +159,20 @@ p { font-size: clamp(12px, 1.7vw, 14px); }
   padding: .3rem .5rem;
   background-color: var(--background-content);
   transition: opacity 0.3s ease-in-out;
+  padding-bottom: 35px;
 }
 .tab-content { display: none; }
 .tab-content.active { display: block;}
 
 /* Right Sidebar */
 .sidebar-right {
-  flex: 0 0 15%;
+  flex: 0 0 13.5%;
   background-color: var(--color-grey-light-2);
   border-left: 1px solid var(--border-color);
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 /* Transitions, Search, & Animations */
@@ -217,37 +226,101 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
   font-size: 0.9rem;
 }
 
-/* Footer Navigation */
+/*
+  ==============================================
+  Awesome Floating Scallop Footer
+  ==============================================
+*/
+
+/* Main container for the footer section */
 .content-footer {
-   overflow: hidden;
-   background-color: var(--background-main);
-   border-top: 1px solid var(--border-color); 
-}
-.footer-nav { display: flex; height: 100%; cursor: pointer; }
-.footer-nav .nav-item {
-  flex: 1;
-  text-align: center;
-  font-size: 12px;
-  padding: 6px 2px;
   position: relative;
-  color: var(--color-grey-mid-2);
-  transition: color 0.2s ease-in-out, border-top-color 0.2s ease-in-out;
-  border-top: 3px solid transparent;
-}
-.footer-nav .nav-item .bi { font-size: 20px; color: var(--primary-color); }
-.footer-nav .nav-item.active {
-  color: var(--primary-color-dark);
-  font-weight: bold;
-  border-top: 3px solid var(--primary-color);
-  background-color: #25547134; /* var(--highlight-color); */
-  border-radius: 9px;
+  height: 65px; /* Define a fixed height */
+  background-color: transparent; /* The bar itself will have the color */
 }
 
-/* ** RESTORED: All original styles below this line, with color variables applied where appropriate ** */
+.footer-nav {
+  position: relative;
+  display: flex;
+  height: 100%;
+  background-color: var(--color-white);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* The animated scallop/indicator. 
+  This pseudo-element creates the circular cutout effect.
+*/
+.footer-nav::before {
+  content: '';
+  position: absolute;
+  top: -35px; /* Positions it to create the scallop */
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  
+  /* This makes it look like a cutout of the background */
+  background-color: var(--background-content); 
+  
+  /* This is the key: it calculates the position based on a JS variable */
+  left: calc(var(--active-index, 0) * 20% + 10%); 
+  
+  /* This perfectly centers the circle */
+  transform: translateX(-50%); 
+  
+  /* Smoothly animates the slide */
+  transition: left 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); 
+}
+
+/* Navigation items styling */
+.nav-item {
+  position: relative; /* For z-index to work */
+  z-index: 2; /* Ensures items are clickable and above the scallop */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--color-grey-mid-2);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-item .bi {
+  font-size: 24px;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.nav-item .nav-label {
+  font-size: 11px;
+  font-weight: 500;
+  margin-top: 4px;
+  opacity: 0; /* Hidden by default */
+  transform: translateY(5px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Styling for the ACTIVE navigation item */
+.nav-item.active {
+  color: var(--color-blue-primary); /* Active icon color */
+}
+
+/* Move the active icon up into the scallop */
+.nav-item.active .bi {
+  transform: translateY(-28px);
+}
+
+/* Fade in the active label */
+.nav-item.active .nav-label {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+
 
 /* Market Tab Grid (Learn Free) */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); gap: 8px; }
-.grid-item { text-align: center; color: var(--color-blue-dark-1);}
+.grid-item { text-align: center; color: var(--color-blue-dark-1); max-width: 120px;}
 .grid-item .text { text-align: center; color: var(--color-blue-dark-2); font-size: 12px; }
 .grid-item .text:hover { text-align: center; color: var(--color-teal-primary); font-weight: 600; font-size: 12px; }
 .grid-item img { width: 100%; height: auto; border-radius: 12px; margin-bottom: 4px; padding: 2px; background-color: var(--primary-color); }
@@ -259,11 +332,11 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
 
 /* Home Tab Icon Grid Styles */
 .icon-grid { --bs-gutter-y: 1.5rem; --bs-gutter-x: 1rem; }
-.icon-item { text-align: center; cursor: pointer; }
+.icon-item { text-align: center; cursor: pointer; font-weight: 600;}
 .icon-box {
     background-color: var(--color-grey-light-1);
     border-radius: 0.75rem;
-    padding: 1rem;
+    padding: .5rem;
     margin-bottom: 0.75rem;
     display: flex;
     justify-content: center;
@@ -288,9 +361,9 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
 #home-content { background-color: var(--color-white); padding: .5rem; }
 
 /* Stories Tab Styling */
-.stories{ width: 100%; height: 150px; font-weight: bold; border-bottom: 5px solid var(--color-grey-dark-2); position: relative; margin-top: .5rem; margin-bottom: .5rem; overflow-y: hidden; overflow-x: auto; }
+.stories{ width: 100%; height: 150px; font-weight: bold; border-bottom: 5px solid var(--color-grey-dark-2); position: relative; margin-top: .5rem; margin-bottom: .5rem; background-color: #aec0cdcb; overflow-y: hidden; overflow-x: auto; }
 ._story{ width: 100%; height: 100%; font-weight: bold; display: flex; align-items: center; padding: 0 5px; }
-.s-card{ width: 100px; height: 95%; font-weight: bold; border: 2px solid var(--color-grey-dark-2); border-radius: 100%; overflow: hidden; position: relative; min-width: 100px; margin-right: 3px; margin-left: 3px; cursor: pointer; }
+.s-card{ width: 100px; height: 95%; font-weight: bold; border: .05rem solid var(--color-grey-dark-2); border-radius: 100%; overflow: hidden; position: relative; min-width: 100px; margin-right: 3px; margin-left: 3px; cursor: pointer; }
 .s-card0{ width: 50px; height: 45%; font-weight: bold; border: 1px solid var(--color-grey-dark-2); border-radius: 15px; overflow: hidden; position: relative; min-width: 50px; margin-right: 3px; margin-left: 3px; cursor: pointer; }
 .s-card0:hover{ transform: scale(1.05); transition: transform 0.2s; background-color: var(--color-teal-light-1); }
 .s-card img{ width: 100%; height: 100%; background-color: var(--color-blue-light-1); color: var(--color-white); border: 1px solid transparent; border-radius: 100%; }
@@ -299,6 +372,73 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
 .s-name>span{ margin-left: 5px; font-family: sans-serif, Georgia; font-size: .6rem; }
 ._myStory::before { content: '+'; position: absolute; width: 30px; height: 30px; margin: auto; background-color: var(--color-white); border: solid 2px var(--color-grey-dark-2); border-radius: 50%; color: var(--color-grey-dark-2); display: flex; justify-content: center; align-items: center; font-size: 30px; font-weight: bold; left: .55rem; top: 15px; }
 .sticky-card { position: sticky; left: 0; z-index: 4; background: var(--color-white); }
+
+ /* ADDED: Scoped styles from explore.html to prevent conflicts */
+    /* Styles from explore.html, scoped to #partner-content */
+    #partner-content {
+        background-color: #f0f2f5; /* Light grey background from original */
+    }
+
+    #partner-content .pro-badge {
+        background-color: #ffc107;
+        color: #3d2c00;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 2px 8px;
+        border-radius: 9999px;
+        text-transform: uppercase;
+    }
+
+    /* Scoped styling for the icon list items to avoid conflict with global .icon-item styles */
+    #partner-content .icon-item-explore { /* RENAMED to avoid any possible conflict */
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.75rem;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        /* Resetting properties from the global .icon-item to avoid conflicts */
+        text-align: left;
+        font-weight: normal;
+        cursor: pointer;
+    }
+    
+    #partner-content .icon-item-explore:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    #partner-content .icon-item-explore i {
+        color: #4b5563;
+        font-size: 1.125rem;
+        width: 2rem;
+    }
+    
+    #partner-content .icon-item-explore span {
+         color: #1f2937;
+         font-size: 0.875rem;
+         font-weight: 500;
+    }
+
+    /* Scoped styling for the 'View more' button */
+    #partner-content .view-more-btn {
+        background-color: #f0f2f5;
+        border: 1px solid #d1d5db;
+        border-radius: 0.75rem;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #1f2937;
+        font-weight: 600;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    
+    #partner-content .view-more-btn:hover {
+        background-color: #e5e7eb;
+    }
+
 
 /* Contact Form (Account Tab) Styles */
 .contact-container { background-color: var(--color-white); padding: 1rem; border-radius: 12px; }
@@ -319,6 +459,10 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
 
 /* Responsive Adjustments For Mobile Phone Screen */
 @media (max-width: 767px) {
+  html {
+  font-size: 75%;
+  font-weight: normal
+}
   .sidebar-right { display: none; }
   .mobile-widgets { display: block; }
   .mobile-widgets a:hover { background-color: #c7e1fd; color: var(--color-black); font-weight: bold; border-left: .31rem solid var(--active-border); }
@@ -337,14 +481,31 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
   .grid-item img { width: 100%; height: auto; border-radius: 8px; }
   .grid-item div { font-size: 10px; font-weight: 500; word-break: break-word; }
   .icon-grid { --bs-gutter-y: 1rem; --bs-gutter-x: 0.5rem; }
-  .icon-box { padding: 1rem; margin-bottom: 0.5rem; aspect-ratio: 1 / 1; }
+  .icon-box { padding: .5rem; margin-bottom: 0.5rem; aspect-ratio: 1 / 0.8; }
+    .icon-item {
+    max-width: 100px;    /* Sets a maximum width for the item */
+  }
   #searchInput.active { width: 8rem; }
 }
 
 @media (min-width: 768px) {
   .mobile-widgets { display: none !important; }
-  .sidebar-left { flex: 0 0 12%; }
-  .icon-box i { font-size: 3rem; }
+  .sidebar-left { flex: 0 0 10%; }
+ .icon-grid { justify-content: justify;}
+   /* This new rule directly controls the size of the icon-item */
+  .icon-item {
+    max-width: 120px;    /* Sets a maximum width for the item */
+  }
+
+  /* These new rules target the icon box on larger screens */
+  .icon-box {
+    padding: 0.75rem;      /* Reduces the internal spacing */
+    aspect-ratio: 1 / 1; /* Makes the box a perfect square */
+  }
+
+  .icon-box i {
+    font-size: 4rem;       /* Reduces icon size to fit the smaller box */
+  }
 }
 
 /* FOOTER FOR HOME PAGE & OLD CSS */
@@ -420,7 +581,7 @@ mark.highlight { background-color: var(--highlight-strong); color: var(--color-b
   padding: 10px auto;
   border-left: 2.3px solid #354455;
 }
-.whitenho { background: var(--color-white); color: var(--color-black); padding: 5px; padding-top: 10px; padding-bottom: 10px; margin: 1px; border-bottom: 2.8px solid var(--border-color); border-top: .2rem solid var(--color-blue-light-1); text-align: justify; }
+.whitenho { background: var(--color-white); color: var(--color-black); padding: 5px; padding-top: 10px; padding-bottom: 10px; margin: 1px; border-bottom: 2.8px solid var(--border-color); border-top: .2rem solid var(--color-blue-light-1); }
 .bgcud1 { background-color:var(--color-grey-mid-1); color: var(--color-grey-dark-2); background-size:cover; } 
 .bgcud7 { background: url("") center no-repeat var(--color-white); background-size: cover; } 
 .bgcud2 { background: linear-gradient(to top right, var(--color-teal-dark-2) 0%, var(--color-teal-primary) 100%); background-size:cover; color: var(--color-white); } 

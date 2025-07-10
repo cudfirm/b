@@ -1,10 +1,11 @@
 /**
- * Handles switching between content tabs.
+ * Handles switching between content tabs and toggles sidebar visibility.
  * Relies on CSS classes to show/hide content.
  * @param {Event | null} event - The click event, or null if called programmatically.
  * @param {string} tabId - The ID of the content tab to open.
  */
 function openTab(event, tabId) {
+    const appContainer = document.querySelector('.app-container');
     const searchInput = document.getElementById('searchInput');
     const clearSearchBtn = document.getElementById('clearSearchBtn');
     
@@ -23,6 +24,18 @@ function openTab(event, tabId) {
     });
     document.querySelectorAll('.tab-button, .nav-item').forEach(el => el.classList.remove('active'));
     
+    // Check if the target tab is a main category/sidebar tab
+    const isSidebarTab = tabId.startsWith('tab') && !tabId.includes('-content');
+
+    // ** MODIFIED: Show or hide the sidebar based on the tab being opened **
+    if (isSidebarTab) {
+        // This is a category tab, so ensure the sidebar is visible.
+        appContainer.classList.remove('sidebar-hidden');
+    } else {
+        // This is Home, Explore, Partner, or Contact, so hide the sidebar.
+        appContainer.classList.add('sidebar-hidden');
+    }
+
     // Activate the clicked tab and its corresponding buttons
     const targetContent = document.getElementById(tabId);
     if (targetContent) {
@@ -31,7 +44,6 @@ function openTab(event, tabId) {
     }
 
     // Handle active state for both sidebar and footer buttons
-    const isSidebarTab = tabId.startsWith('tab') && !tabId.includes('-content');
     if (isSidebarTab) {
         const sidebarButton = document.querySelector(`.tab-button[onclick*="'${tabId}'"]`);
         if (sidebarButton) sidebarButton.classList.add('active');
@@ -42,6 +54,19 @@ function openTab(event, tabId) {
         const footerButton = document.querySelector(`.nav-item[onclick*="'${tabId}'"]`);
         if (footerButton) footerButton.classList.add('active');
     }
+
+    // ======================================================
+    // === NEW CODE FOR FOOTER ANIMATION - ADD THIS BLOCK ===
+    // ======================================================
+    const activeNavItem = document.querySelector(`.nav-item.active`);
+    if (activeNavItem) {
+        const activeIndex = activeNavItem.dataset.index;
+        const footerNav = document.querySelector('.footer-nav');
+        footerNav.style.setProperty('--active-index', activeIndex);
+    }
+    // ======================================================
+    // ============= END OF NEW CODE BLOCK ==================
+    // ======================================================
 }
 
 /**
