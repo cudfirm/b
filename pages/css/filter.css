@@ -1,0 +1,1373 @@
+
+/* 
+==============================
+NOTE: 
+       THIS CODE IS WRITTEN BY UTIBE, USING NO ADDITIONAL FRAMEWORKS AND EXTERNAL CASCADING STYLES. 
+      
+     THUS, MODIFICATION OF THIS CODE IS AN INFRINGEMENT OF COPYRIGHT LAW, AND MAY LEAD TO COURT, THUS IMPLEMENTING THE TERMS OF USE AND PRIVACY POLICY THAT GUIDES THE EXISTENCE OF THIS CODE. 
+
+    FOR THIRD PARTY USE
+   1) FREE PUBLICATION 
+   A) FOR SAMPLE OR TUTORIAL PURPOSES. 
+
+I)  CREDIT MUST BE GIVEN TO THE OWNER.
+II)  BACKLINK FOR REDIRECTING, (WITH PERFECT ANCHOR SEO), MUST BE FIXED AT THE FOOTER OR HEADER SECTION..
+
+ B)  FOR A LEASE 
+ I)  THE CSS, JS AND THE ENTIRE SEMANTICS SKELETON MUST NOT BE TEMPERED WITH. 
+  A)  FOR TEST
+  B)  FOR SHARING 
+  C)  FOR TEMPLATE GENERATING 
+
+THE BACK LINK:
+    WWW.CUDFIRM.WAPKA.CO
+    WWW.WLAB.GA
+==============================
+*/
+
+/*
+             ==========   =======  ========
+                              GLOBAL CSS
+            =========   =========  =======
+*/
+
+* {
+  box-sizing: padding-box; 
+  font-family: sans-serif, Georgia;
+  font-size: 62.5%; 
+  font-weight: 400; 
+  transition: all 0.3s;
+  line-height: 1.26;
+  -webkit-transition: all 0.3s;
+}
+
+html {
+  font-size: 62.5%;
+  font-weight: 400; 
+  width: 100%;
+  height: auto; 
+  line-height: 1.26;
+}
+
+
+/* ============= MOBILE ============ */
+/* CURRENTLY IN USE OF MULTIPLE IMAGE BG */
+@media(max-width:480px) {
+  body {
+    font-size: 1rem;
+    font-family: sans-serif, Georgia;
+    position: relative;
+   -webkit-user-select: none;
+   -webkit-touch-callout: none;
+   -moz-user-select: none;
+   -ms-user-select: none; user-select: none;
+    font-weight: 400; 
+    text-transform: capitalize;
+    text-decoration: none; 
+     margin: 0;
+     padding: 0;
+     outline: none; 
+      min-height: 100vh;
+      height: 100vh; 
+      overflow: auto;
+      background-clip: border-box;
+      background-origin: border-box;
+      background-color: #d5dfe9;
+      color: #303e45;
+      background-size: 100% 100%; 
+      }
+   }
+/* =========== MOBILE END =========== */
+
+
+
+/* ============= BIGGER ============ */
+/* CURRENTLY IN USE OF MULTIPLE IMAGE BG */
+@media(min-width:481px) {
+  body {
+    font-family: sans-serif, Georgia;
+    position: relative; 
+   -webkit-user-select: none;
+   -webkit-touch-callout: none;
+   -moz-user-select: none;
+   -ms-user-select: none; user-select: none;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-decoration: none; 
+     margin: 0;
+     padding: 0;
+     outline: none; 
+     min-height: 100vh;
+     height: 100vh; 
+     overflow: scroll;
+     background-clip: border-box;
+     background-origin: border-box;
+     background-color:#d5dfe9;
+     background-size: cover; 
+}
+}
+/* =========== BIGGER =========== */
+
+body::after {
+  content: "Version CUD 0.2.1";
+  display: block;
+  font-weight: 700; 
+  text-align: center; 
+  margin-left: auto; 
+  margin-right: auto; 
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: .6rem;
+  padding-bottom: .6rem;
+  background-color: #5a5a53;
+  color: #ffffff;
+  text-align: center;
+  font-weight: lighter;
+  font-family: Diplomata;
+  font-style: oblique;
+  height: auto;
+ }
+
+/* xxxxxxxxxxxxxxxxxx */
+
+
+a{
+  color: #878745;
+  text-decoration: none; 
+  font-weight: 700;
+}
+
+header#topper {
+    height: auto;
+    background-color:rgba(0,0,0,0.5);
+    border:1px solid #008080;
+    color: #ffffff;
+    font-size: 2rem;
+    font-variant: small-caps;
+    box-shadow:5px 5px 2px 2px rgba(25,53,91,0.3);
+    font-family: sans-serif, Georgia;
+    margin-top: 0.8rem;
+    margin-left: 0.7rem;
+    margin-bottom: 0.1rem;
+    padding: .4rem 1rem; 
+    float: right!important;
+    clear: both; 
+    display: table;
+}
+
+
+main {
+    display: block; 
+    position: relative;
+    height: auto; 
+    margin-left: auto; 
+    margin-right: auto; 
+    clear: both;
+}
+
+/*########## This is to align front page text at the center #########*/
+@keyframes hand-wave {
+  0% {
+    transform: rotate(0deg); /* Start at default */
+  }
+  25% {
+    transform: rotate(25deg); /* Rotate slightly up */
+  }
+  50% {
+    transform: rotate(0deg); /* Return to default */
+  }
+  75% {
+    transform: rotate(25deg); /* Rotate slightly up */
+  }
+  100% {
+    transform: rotate(0deg); /* Return to default */
+  }
+}
+ /*Centers the welcome text box.*/
+.pool.tpright.ttext {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  position: relative; /* Allows absolute positioning of the icon */
+  overflow: auto;
+}
+
+.left-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  color: #333;
+  animation: hand-wave 1.5s ease-in-out infinite; /* Apply animation */
+  transform-origin: 50% 50%; /* Set rotation point in the center */
+}
+/*Hand pointing css stops here*/
+
+.rightt {
+     position: relative; 
+     top: 0!important;
+     right: .2rem;
+    display: block;
+    width: auto; 
+    height: auto; 
+    background: #edeeda; 
+    border: 1px solid #333;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    border-right: none;
+    color: #062020;
+    box-shadow: .5rem .2rem .2rem .5rem rgba(25,53,91,0.3);
+    margin-top: 0.1rem;
+    margin-right: 0.7rem;
+    padding: 1.2rem; 
+    font-weight: 700;
+    z-index: 3;
+    float: right;
+}
+
+section.rightt span.ttext{
+       width: 4rem; 
+       height: 3rem; 
+       font-size: 1.6rem;
+       font-weight: 600;
+       margin: .2rem .2rem .9rem .2rem; 
+       padding: .6rem; 
+}
+
+
+
+/* ##### CSS FOR DROP DOWN MENU ###### */
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+bodie#drop {
+  margin: 0;  
+  padding: 0;
+}
+
+.menu{
+    position: fixed;
+    width: 60px; /* 70 */
+    height: 60px; /* 70 */
+    background-color: #111;
+    border-radius: 100%;
+    transform: rotate(-90deg);
+    transition: 1s;
+    top: 5px;
+    left: 5px;
+    z-index: 11;
+}
+
+.cm{
+    width: 70vw;
+    min-width: 250px; /* 300px */
+    max-width: 450px; /* 500px */
+    height: 40px; /* 50px */
+    background-color: #111;
+    margin-top: 10px;
+    border-radius: 100px 20px 20px 100px;
+    position: relative;
+}
+
+.m{
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 40px; /* 50 */
+    height: 40px; /* 50px */
+    border-radius: 100px;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(90deg);
+}
+
+.cmm div{
+    width: 22px;
+    height: 2px;
+    background-color: #fff;
+    transition: 1s;
+    font-size: 1.6rem;
+}
+
+.cmm div:nth-child(2){
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+#out1{
+    width: 2px;
+    height: 2px;
+}
+
+#out2{
+    width: 2px;
+    height: 2px;
+}
+
+#cm{
+    display: flex;
+    background: #0000;
+    transition: 0.5s;
+}
+
+.item{
+    width: 100%;
+    height: 100%;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.bodie{
+    padding-bottom: 15px;
+}
+
+#my{
+    /* text-align: center; */
+    padding-top: 40vh;
+    color: #fff0;
+    font-size: 2.5em;
+    position: fixed; 
+    right: 10px; 
+    bottom: 10px; 
+}
+#coo{
+    transition: 3s;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#cs{
+    transition: 3s ease 2s;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+/* Media query for devices with a maximum width of 767px (typical mobile devices) */
+@media screen and (min-width: 767px) {
+.menu{
+    position: fixed;
+    width: 70px; 
+    height: 70px; 
+}
+
+.cm{
+    width: 70vw;
+    min-width: 300px; 
+    max-width: 500px; 
+    height: 50px; 
+}
+.m{
+    width: 50px; 
+    height: 50px; 
+}
+}
+
+
+
+/* 
+                      ==========
+             FILTER SEARCH INPUT
+                      ==========
+*/
+
+input[type='text'] {
+  font-size: 1.3rem;
+  position: absolute;
+  top: 0!important;
+  right: 0!important;
+  height: 3rem; /* 7.5vh; */
+  width: 75%;
+  background: rgba(225, 225, 225, 0.8);
+  color: #062020 !important; /* Ensure text color is applied */
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  z-index: 3;
+  margin-top: 0.3rem;
+  margin-right: 0.5rem;
+  border-radius: 0 0 5px 5px;
+  font-weight: 500;
+  text-transform: capitalize;
+  transform: all 0.5s ease;
+  appearance: none;
+  outline: none;
+  border: solid 2px #5a6d77;
+}
+
+
+
+input[type='text'] {
+       display: block; 
+} 
+
+input[type='text']:hover {
+ height: 3rem; /*7.7vh;*/
+ width: 77%; 
+ background: #fff; 
+ color: #062020; 
+ font-weight: bolder; 
+ border: solid 2px #333;
+ border-radius: 5px 5px 0 0;
+ box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+
+ul {
+  font-size: 1rem; 
+  display: flex; /*inline-block; */
+  flex-direction: column; /* Arrange list items vertically */
+  align-items: center; /* Center the list items */
+  padding: 0;
+  margin: 0 auto; /* Center the ul within its container */
+  width: 100%; /* Set a width or adjust accordingly */
+  height: 100%;
+ /* width: 100%; */
+  scroll-behavior: smooth;
+  text-align: center!important;
+  background-color: #ccd3e0;
+  z-index: 1;
+  border-radius: .3rem .4rem .4rem .4rem;
+  padding: 1px;
+  /*margin-left: auto; 
+  margin-right: auto; */
+  overflow-x: hidden;
+  color: rgb(20,20,30);
+  transform: all 0.5s ease;
+  overflow-y: scroll;
+  text-align: justify;
+  list-style-type: none;
+}
+
+
+ul li { 
+  font-size: 1rem; 
+  position: relative;
+  display: flex; 
+  scroll-behavior: smooth;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%; 
+  max-width: 600px; /* Limit the width to keep it manageable */
+  border: 1px solid rgba(230,230,230,0.3);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  text-align: justify; 
+  margin: .15rem; 
+  padding: .8rem;
+  background: #fdfdfa; 
+  list-style-type: none; 
+}
+
+ul li p{
+    font-size: 1.6rem; 
+   /* line-height: 1.5; */
+    margin-top: .25rem;
+    margin-bottom: .25rem; 
+    padding: .4rem;
+}
+
+em#sub{
+   display: inline-block;
+    margin-top: .3rem;
+    margin-bottom: .8rem; 
+    padding: 1rem;
+    font-size: 1.25rem; 
+    font-weight: 700;
+    color: #303e45; /* #8caa95; */
+    margin-left: .2rem; 
+    /* margin: .15rem; */
+    overflow: auto;
+    white-space: normal;
+}
+
+@media (min-width: 601){
+     em#sub{ 
+       font-size: 1.5rem;
+}
+}
+
+.cudfirm{
+        color: #fd5800!important;
+        font-size: 1.5rem;
+        font-weight: 800; 
+}
+
+#c {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: .4rem;
+  color: #4682b4;
+  border: none;
+  margin-bottom: .6rem;
+  text-decoration: none;
+  word-wrap: normal;
+  text-wrap: stable;
+  text-align: center;
+  transform: rotate(-40deg);
+  display: inline-block;
+}
+
+#c:hover {
+  color: #008080;
+  font-size: 1.6rem;
+  font-weight: 900;
+  padding: .7rem;
+  border-left: solid 3px #8caa95;
+  text-decoration: none;
+}
+
+
+/* ul li a#b */ #b{
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #062020; 
+      color: #ffffff;
+      display: inline-block;
+      font-size: 1.55rem;
+      font-weight: 700; 
+      padding: .4rem; 
+    /*  margin-left: 6rem; */
+      margin-bottom: .8rem;
+      border: solid 1px #ccc; 
+      border-radius: 50%;
+      text-decoration: none; 
+}
+
+/* ul li a#b */ #b:hover{
+      background: #53734c;
+      color: #fff;
+      display: inline-block;
+      font-size: 1.6rem;
+      font-weight: 900; 
+      padding: .4rem; 
+      margin-left: 6rem;
+      border: solid 1px #126161; 
+      border-radius: 50%;
+      text-decoration: none; 
+}
+
+
+/*
+                           =====      =====
+                       CHECKBOX CSS
+                          ======        ====
+*/
+
+/* THE CHECK SECTION CONTAINER (SEARCH TAB) */
+section.checks#search{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #edeeda;
+      color: #062020;
+      box-shadow: 2px 3px 3px rgba(0,0,0,0.23), -2px 3px 3px rgba(0,0,0,0.16);
+      min-height: 80vh; /* 60vh */
+      height: 84vh; /* 64vh */
+      max-width: 98%;
+     /* width: 95%; */
+      margin: 0.3rem; 
+      padding: 2rem auto 2rem .5rem; /*2rem*/
+      border: 1px solid #ccc;
+      border-radius: .5rem; 
+	  overflow: hidden;
+     /* border-left: 4px solid #008080; */
+}
+
+
+/* THE CHECK SECTION CONTAINER (MENU TAB) */
+section.checks#menu{
+      display: block;
+      text-align: center!important;
+      align-items: center;
+      justify-content: center;
+      background: #f8f8ff; 
+      color: #062020;
+      box-shadow: 2px 3px 3px rgba(0,0,0,0.23), -2px 3px 3px rgba(0,0,0,0.16);
+      min-height: 80vh; /*60vh*/
+      height: fit-content; /*64vh*/
+      max-width: 98%;
+     /* width: 95%; */
+      margin: 0.5rem; 
+      padding: .7rem; 
+      border: 1px solid #8caa95;
+      border-radius: .5rem; 
+     /* border-left: 4px solid #008080; */
+      overflow-y: hidden; 
+}
+
+
+
+/* THE CHECK SECTION CONTAINER (FORUM TAB) */
+section.checks#forum{
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f8f8ff; 
+      color: #062020;
+      box-shadow: 2px 3px 3px rgba(0,0,0,0.23), -2px 3px 3px rgba(0,0,0,0.16);
+      min-height: 80vh; /*60*/
+      height: fit-content; /*64*/
+      max-width: 98%;
+     /* width: 95%; */
+      margin: .3rem; 
+      padding: .8rem; /*2rem*/
+      border: 1px solid #ccc;
+      border-radius: .5rem; 
+     /* border-left: 4px solid #008080; */
+}
+
+
+
+span { height: auto;}
+
+.li { display: none; }
+            
+input.menuButton:checked + span p.li{
+     display: flex; 
+     justify-content: flex-end; 
+     align-items: right;
+     margin: .4rem 1rem;
+}
+
+
+/* 
+INSTRUCTION SECTION - SWITCHES TO SEARCH CONTENT WHEN CHECKED
+*/
+input.menuButton:checked + span section.pool{
+     display: none; 
+}
+
+span section.pool{
+          position: absolute;
+          top:0!important;
+          right:0!important;
+          display: inline-block; 
+          font-size: 1.6rem; 
+          font-weight: 500; 
+          padding: .5rem; /*1rem*/
+          margin-top: 0.6rem;
+          margin-bottom: 2rem; /*1rem*/
+          margin-right: 0.5rem; 
+          background: #ffffff;
+          color: #062020; 
+          text-align: left; 
+          border: solid .1rem #093030;
+          border-radius: .4rem; 
+          box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+          max-width: 80%; /* 60vw; */
+          width: 100%; /*90%; */
+          height: 80vh; 
+          overflow-y: scroll; 
+}
+
+span section.pool p big {
+        color: #191970; 
+}
+
+span section.pool p {
+        color: #062020;  /* #f1faea; */
+        font-size: 1.5rem; /* 65% */
+        font-weight: 600;
+}
+
+big{
+    font-size: 100%; /*1.6rem; */
+    font-weight: 800;
+}
+
+
+/* THE FILTER SEARCH SECTION */
+input.menuButton:checked + span article.pool{
+          position: absolute;
+          bottom:0!important;
+          right:0!important;
+          display: flex;
+          align-items: flex-start; 
+          justify-content: justify; 
+          font-size: 1.6rem; 
+          font-weight: 400; 
+          padding: 3px; 
+          margin-bottom: 0.5rem;
+          margin-right: 0.5rem; 
+          margin-top: 2rem;
+          background: #f8f8ff;
+          color: #903030; 
+          box-shadow: 2px 3px 3px rgba(0,0,0,0.23), -2px 3px 3px rgba(0,0,0,0.16);
+          border: solid 1px #ccc;
+          border-radius: 4px; 
+          max-width: 90%; /*85%*/
+          width: 100%;
+		   max-height: 90%; /*84%*/
+          height: 80vh; /*86vh*/ 
+          overflow-x: hidden; 
+		    overflow-y: hidden; 
+}
+
+span article.pool{
+          display: none; 
+}
+
+
+/*
+TERMS OF USE BUTTON DISPLAYED (Vertically) WHILE BOX IS UNCHECKED
+*/
+input.menuButton:checked + span a.btleft button.a1{
+     display: none;
+}
+span a.btleft button.a1{
+         position: absolute;
+         top:0!important;
+         right:0!important;
+         display: inline-block; 
+         justify-content: flex-start; 
+         align-items: left; 
+         margin-top: 0; 
+         margin-right: 0;
+         font-size: 1.4rem;
+         font-weight: 700; 
+         z-index: 5;
+          background: #c2c6c9;
+          color: #260909; 
+          border: solid 1px #f1faea;
+          border-radius: 5px; 
+          border-style: outset; 
+		  overflow: hidden;
+}
+
+span a.btleft button.a1:hover{
+          display: inline-block;
+          font-size: 1.52rem;
+          font-weight: 800; 
+          padding: 4px; 
+          margin-left: 2rem; 
+          margin-top: 1rem;
+          background-color: #008080;
+          color: #fff; 
+          border: solid 1px #333;
+          border-radius: 5px; 
+          border-style: outset; 
+}
+
+
+/* THE CHECK BOX CSS */
+/* Checkbox */
+/*The Original Version*/
+/*input[type='checkbox'] {
+       position: absolute;
+       top:0!important;
+       left:0!important;
+       display: flex; 
+       justify-content: flex-start; 
+       align-items: left; 
+       height: 3rem;
+       width: 3rem;
+       margin-top: 0; 
+       margin-left: 0;
+       background: #903030;
+       color: #e2f3ff;
+       text-align: justify; 
+       z-index: 3;
+}*/
+
+input[type='checkbox'] {
+  position: absolute;
+  top: 0!important;
+  left: 0!important;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0;
+  margin-left: 0;
+  background-color: #11773a; /* Fixed the background color */
+  border: 2px solid #08183b;
+  border-radius: 5px;
+  z-index: 3;
+  cursor: pointer; /* Adds pointer cursor to indicate it's clickable */
+  animation: pulse 2s infinite ease-in-out; /* Adding the call-out effect */
+}
+
+input[type='checkbox']:checked {
+  background-color: #5cb85c; /* Change background color when checked */
+  border-color: #5cb85c;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(18, 83, 41, 0.5);
+  }
+  50% {
+    transform: scale(1.1); /* Slight zoom */
+    box-shadow: 0 0 15px rgba(17, 84, 37, 0.8);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(14, 71, 13, 0.5);
+  }
+}
+/* Check box ends here */
+
+
+
+/* THE POOL CLASS FOR MENU TAB */
+#off{
+          display: inline-block; 
+          font-size: 1.6rem; 
+          font-weight: 400; 
+          padding: 1rem; 
+          margin-top: 0.6rem 0.5rem 1rem 0.5rem;
+          background: rgba(0,0,0,0.5 );
+          color: #f1faea; 
+          text-align: left; 
+          border: solid .1rem #093030;
+          border-radius: .4rem; 
+          box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+          max-width: 90%; /* 60vw; */
+          width: 100%; /*90%; */
+          height: 60vh; 
+          overflow: scroll; 
+}
+#off p{ 
+     font-weight: 500;
+     color: #fff; 
+}
+
+#on{
+          display: inline-block; 
+          font-weight: 400; 
+          padding: 1rem; 
+          margin-top: 0.6rem 0.5rem 1rem 0.5rem;
+          background: rgba(0,128,128,0.5 );
+          color: #f1faea; 
+          text-align: left; 
+          border: solid .1rem #093030;
+          border-radius: .4rem; 
+          box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+          max-width: 90%; /* 60vw; */
+          width: 100%; /*90%; */
+          height: 60vh; 
+          overflow: scroll; 
+}
+
+
+/*
+                               =======     ===
+                 THE TAB SECTION CSS BEGINS
+                               ======    ====
+*/
+
+
+/* THIRD CONTAINER AND DISPLAY BODY CLASS FIXED v0.3 */
+.container {
+    height: 100%;
+    margin-left: .3rem; /*1rem*/
+    margin-right: .3rem; /*1rem*/
+    margin-top: 0.15rem;
+    padding-top: 4rem;
+    /*overflow-x: hidden; */
+    overflow: hidden; /* Initially changed from hidden to auto */
+}
+
+.display-body {
+    max-height: fit-content; /*95%;*/
+    /*height: 90vh; */
+    min-height: 75vh;
+    background: #fff; 
+    box-shadow: .2rem .3rem .3rem rgba(0,0,0,0.23), -2px 3px 3px rgba(0,0,0,0.16);
+    z-index: 1;
+    border-radius: 0 .5rem .5rem .5rem;
+    border-top: 3px solid #0c4040;
+    padding: .5rem; /*2rem*/
+    color: #062020;
+    transition: all 0.5s ease; /* Changed from transform to transition */
+    overflow-x: hidden;
+    overflow-y: auto; /* Change from hidden to auto */
+}
+
+/* Media query for devices with a maximum width of 767px (typical mobile devices) */
+@media screen and (max-width: 767px) {
+    .container, .display-body {
+        overflow-y: auto; /* Set overflow-y to auto for mobile devices */
+    }
+}
+
+.tab-bar{
+    height: 3rem;
+    background: transparent;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    transform: all 0.5s ease;
+}
+
+.tab{
+    height: 3rem;
+    background: #f8f4ff;
+    box-shadow: -2px -3px 3px rgba(0,0,0,0.16);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    margin-right: .3rem;
+    margin-top: 0.2rem;
+    color: #062020;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-radius: .5rem .5rem 0 0;
+    text-transform: uppercase;
+    transform: all 0.5s ease;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+.selected{
+  background: #303e45;
+  z-index: 10;
+  transform: all 0.5s ease;
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #fff;
+  border-left: solid 3px #062020;
+}
+
+/* TERMS OF USE CSS SECTION */
+strong#lnk {
+     font-size: 1.8rem;
+     font-weight: 800;
+     color: #008080;
+}
+
+p#wan {
+      color: #903030;
+}
+/* TERMS IF USE CSS ENDS */
+
+
+/* THE ORIGINAL */
+/* display-body div{
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+    height: 0;
+    opacity: 0;
+}
+
+.display-body div.display{
+    transform: translateX(0);
+    height: auto;
+    opacity: 1;
+} */
+
+
+/* IN USE */
+.display-body div{
+    transform: translateX(-200%);
+    transition: all 0.5s ease;
+    height: 0;
+    opacity: 0;
+    margin-bottom: 4rem; 
+}
+
+.display-body div.display{
+    transform: translateX(0);
+    height: auto;
+    opacity: 1;
+}
+
+
+
+
+/*
+                                   ==========
+                     EXTRA CSS (GENERAL USE)
+                                   ==========
+*/
+
+/* FOR POSITIONING CONTENT */
+.wholecontain { 
+          position: relative;
+}
+ /* .wholecontain{
+      position:relative;
+}   */
+
+.wholecontain:hover .wholecontain-hover{
+      display:block;
+}
+
+.wholecontain:hover span.wholecontain-hover{
+      display:inline-block;
+} 
+
+span.wholecontain {
+          display: inline-block
+}
+.tpleft {
+        position: absolute;
+        left: 0;
+        top: 0;
+}
+.tpright {
+        position: absolute;
+        right: 0;
+        top: 0;
+}
+.btleft {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+}
+.btright {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+}
+.middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-0%, -50%);
+}
+.left {float: left!important;}
+.right {float: right!important;}
+
+.justcontain:after, .justcontain:before {
+    content:"";
+    display: table; 
+    clear: both;
+}
+
+.justcontain { 
+    padding: 0.01em 16px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+}
+
+em.pool {
+          margin-top: 3rem;
+           display: block;
+}
+
+.ttext {
+    background: rgba(0,0,0,0.5);
+    padding: .7rem;
+    color: #fff;
+    margin: .2rem;
+}
+
+@-webkit-keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.95) translateY(-2%);
+            transform: scale(0.95) translateY(-2%);
+  }
+  60% {
+    -webkit-transform: scale(0.50) translateY(-2%);
+            transform: scale(0.50) translateY(-2%);
+  }
+  100% {
+    -webkit-transform: scale(0.95) translateY(-2%);
+            transform: scale(0.95) translateY(-2%);
+  }
+}
+
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.95) translateY(-2%);
+            transform: scale(0.95) translateY(-2%);
+  }
+  60% {
+    -webkit-transform: scale(0.50) translateY(-2%);
+            transform: scale(0.50) translateY(-2%);
+  }
+  100% {
+    -webkit-transform: scale(0.95) translateY(-2%);
+            transform: scale(0.95) translateY(-2%);
+  }
+}
+
+
+
+/* DIAGONAL AND VERTICAL (FOR GENERAL USE) */
+/* WRITING MODE*/
+article.htb {
+  writing-mode: horizontal-tb; 
+}
+
+article.vrl {
+  writing-mode: vertical-rl; 
+}
+span.vrl {
+  writing-mode: vertical-rl; 
+}
+
+span.vlr {
+  writing-mode: vertical-lr;
+}
+
+/* ROTATED WRITING MODE */
+
+.rotated {
+       writing-mode: tb-rl;
+       transform: rotate(-180deg);
+       
+}
+
+
+
+
+
+/*
+                                 ===============
+                       RESPONSIVE SECTION BEGINS
+                                 ===============
+*/
+
+article#aa1{
+  float: left; 
+  width: 60%;
+}
+
+aside#aa2{
+  float: right; 
+  width: 35%;
+  height: fit-content; /* 60vh */
+  margin-top: 1rem; 
+  background-color: #c7e4f1;
+  border-left: .4rem solid #333;
+  border-radius: .5rem; 
+  /*overflow-y: scroll; */
+}
+
+aside#aa2 article#sided{
+  display: block; 
+  width: 90%;
+  height: auto; /* auto */
+  padding: 4px; 
+  margin: 0.8rem;
+  margin-left: auto; 
+  margin-right: auto; 
+  font-size: 1.5rem; 
+  font-weight: 700;
+  border: solid .2rem #778899;
+  background: linear-gradient(145deg,rgba(145,145,145,0.6)15%,rgba(255,255,255,0.5)70%,rgba(223,223,223,0.6)15% );
+box-shadow: 2px 3px 3px rgba(0,0,0,0.23), -2px 3px 3px rgba(0,0,0,0.16);
+color: #303e45;
+ /* background: rgba(225,225,225,0.8); 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2); */
+  overflow-y: auto; /* overflow: scroll */
+}
+
+aside#aa2 h3{
+  position: -webkit-sticky; 
+  position: sticky; 
+  top: 0;
+  width: 10rem; 
+  display: flex; 
+  align-items: flex-end;
+  align-content: flex-end; 
+  justify-content: right; 
+  padding: .5rem .3rem; 
+  margin-top: 0.7rem; 
+  margin-left: 0.1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+  background: #f5f5dc; 
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #903030;
+  border: 2px solid #333;
+}
+
+/* Media Queries */
+/* Formally 768, Now Max Is 640 */
+ @media(max-width: 640px){
+  article#aa1,
+  aside#aa2{
+    float:none;
+    text-align: justify;
+    width:100%;
+  } 
+}
+
+@media(min-width: 640px){
+article#aa1{
+    float: left; 
+    width: 60%;
+    min-height: auto;
+    height: 100vh;
+}
+}
+
+
+#off + input.menuButton:checked {
+    display: none!important; 
+}
+
+
+/* ===========================
+    Social
+============================ */
+
+.icons-social{
+  padding: .5rem;
+}
+
+.list-social{
+  text-align:center;
+  padding:0;
+}
+
+.icons-social__item{
+  display:inline-block;
+  transition:all 0.3s;
+  -webkit-transition:all 0.3s;
+  -moz-transition:all 0.3s;
+}
+
+.icons-social__item:hover {
+  transform:rotate(10deg);
+  -webkit-transform:rotate(10deg);
+}
+
+.icons-social__link{
+  font-size: 3.5rem;
+  color:#444442;
+  padding:1rem;
+}
+
+.icons-social__link:hover{
+  color:#f4363b;
+}
+
+
+/* ===========================
+    FOOTER
+============================ */
+
+.footin{
+  display: flex; 
+  justify-content: space-between;
+  align-items: center; 
+  align-content: center; 
+  position: relative;
+  bottom: .05rem!important;
+  height: auto; 
+  padding: .5rem 1rem;
+  color: #008080; /* #444442; */
+  text-align:center;
+  background: #edeeda; /* #ececec; */
+  margin: .8rem 0 0 0;
+}
+
+.container-footer__link{
+  color: #008080; /*#444442; */
+  text-decoration:none;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.container-footer__link:hover{
+  color: #903030; 
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+
+
+/*
+====== FONT SIZE FOR BIGGER SCREENS ========
+*/
+@media(min-width:601px) {
+  html {
+      font-size: 80%; 
+}
+  body { 
+     font-size: 1.8rem;
+}
+}
+
+/*======= FOR TABLE CSS ========= */
+
+
+table {
+  /*display: inline-block;*/
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    border-collapse: collapse;
+    max-width: 95%;
+    width: 100%;
+    text-wrap: wrap;
+}
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  unicode-bidi: isolate;
+  border-color: inherit;
+  /* width: 100%; */
+}
+
+
+    th,
+    td {
+      text-wrap: stable;
+   /* display: inline-block; */
+      border: 1px solid #ccc;
+      text-align: center;
+      padding: 3px;
+      /* width: 100%; */ 
+    }
+
+    thead,
+    tr:nth-child(even) {
+      background: #eee;
+    }
+
+    thead th:first-of-type {
+      /* This was initially disabled, but i just enabled it to see the result*/
+      width: 50%;
+    }
+
+    table:nth-of-type(1) thead {
+      background: #708090;
+      color: #e4e4e4;
+    }
+
+    table:nth-of-type(2) thead {
+      background: #3cb371;
+      color: #e4e4e4;
+    }
+
+table {
+table-layout: fixed;
+/* width: 100%; */
+}
+
+td, th {
+overflow: hidden;
+white-space: collapse balance;
+/* width: fit-content;*/
+}
+
+
+/* Image CSS size adjustment */
+img {
+  width: 100%;
+  height: auto;
+}

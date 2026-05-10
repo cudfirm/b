@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Roundup</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base styles & custom properties */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f7f4; /* Off-white */
+            color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Subtle scroll animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom transition delay utilities using Tailwind's @layer directive */
+        @layer utilities {
+            .transition-delay-100 { transition-delay: 100ms; }
+            .transition-delay-200 { transition-delay: 200ms; }
+            .transition-delay-300 { transition-delay: 300ms; }
+            .transition-delay-400 { transition-delay: 400ms; }
+            .transition-delay-500 { transition-delay: 500ms; }
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 lg:p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <header class="mb-12 border-b border-gray-300 pb-4">
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-tighter text-gray-900">Weekly Roundup</h1>
+            <p class="text-lg text-gray-500 mt-1">July 13, 2025</p>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <div class="lg:col-span-2 reveal">
+                <a href="https://bun.sh/" target="_blank" rel="noopener noreferrer" class="block group overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-xl transition-shadow duration-300 h-full">
+                    <div class="h-64 sm:h-80 bg-cover bg-center" style="background-image: url('https://i.imgur.com/K3aYqfD.png');"></div>
+                    <div class="p-6 sm:p-8">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-indigo-600">Tool</span>
+                        <h2 class="mt-2 text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
+                            Bun 2.0: The JavaScript Toolkit, Reimagined
+                        </h2>
+                        <p class="mt-4 text-gray-600">
+                            A massive leap forward for the all-in-one toolkit. This release brings unparalleled performance boosts, first-class Windows support, and a more powerful bundler, solidifying its position as a serious contender to Node.js.
+                        </p>
+                        <div class="mt-6 flex items-center font-medium text-indigo-600">
+                            <span>Explore Bun 2.0</span>
+                            <span class="ml-2 transform transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8">
+                
+                <div class="reveal transition-delay-100">
+                    <a href="https://www.val.town/" target="_blank" rel="noopener noreferrer" class="block group bg-white p-6 rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300 h-full">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-cyan-600">Library</span>
+                        <h3 class="mt-2 text-xl font-bold text-gray-900">Valtown: The Social REPL</h3>
+                        <p class="mt-3 text-gray-600 text-sm">A new way to write and share tiny cloud functions. It's serverless meets social coding—perfect for prototyping APIs and bots.</p>
+                         <div class="mt-4 flex items-center text-sm font-medium text-cyan-600">
+                            <span>Visit Valtown</span>
+                            <span class="ml-2 transform transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="reveal transition-delay-200">
+                    <a href="https://v0.dev/" target="_blank" rel="noopener noreferrer" class="block group bg-white p-6 rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300 h-full">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-amber-600">Concept</span>
+                        <h3 class="mt-2 text-xl font-bold text-gray-900">The Rise of AI-Generated UI</h3>
+                        <p class="mt-3 text-gray-600 text-sm">Tools like v0.dev are changing front-end workflows by generating React components from text and image prompts. Is this the future?</p>
+                         <div class="mt-4 flex items-center text-sm font-medium text-amber-600">
+                            <span>See it in action</span>
+                            <span class="ml-2 transform transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="reveal transition-delay-300">
+                    <a href="https://spline.design/" target="_blank" rel="noopener noreferrer" class="block group bg-white p-6 rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300 h-full">
+                         <span class="text-xs font-semibold uppercase tracking-widest text-rose-600">Fun Project</span>
+                        <h3 class="mt-2 text-xl font-bold text-gray-900">3D Web Scenes with Spline</h3>
+                        <p class="mt-3 text-gray-600 text-sm">Spline's new exporter makes it incredibly simple to build interactive 3D scenes and integrate them into your web projects with Three.js.</p>
+                         <div class="mt-4 flex items-center text-sm font-medium text-rose-600">
+                            <span>Start Creating</span>
+                            <span class="ml-2 transform transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="reveal transition-delay-400">
+                    <a href="https://github.com/microsoft/mona-sans" target="_blank" rel="noopener noreferrer" class="block group bg-white p-6 rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300 h-full">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-emerald-600">Resource</span>
+                        <h3 class="mt-2 text-xl font-bold text-gray-900">Mona Sans & Hubot Sans</h3>
+                        <p class="mt-3 text-gray-600 text-sm">A beautiful, open-source, and variable font family from GitHub. A versatile choice for any modern web or app interface.</p>
+                         <div class="mt-4 flex items-center text-sm font-medium text-emerald-600">
+                            <span>Get the Fonts</span>
+                            <span class="ml-2 transform transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Simple Intersection Observer for scroll animations
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
