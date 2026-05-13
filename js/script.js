@@ -569,14 +569,14 @@ function initServiceFinder() {
     var serviceGrid = document.getElementById('service-grid');
     if (!serviceGrid) return;
     var serviceData = [
-        { title: 'PHOTOGRAPHY', isRegistered: true, description: 'Event planning, weddings, birthdays, parties, pre-ceremonial setups, engagement and surprises.', image: 'https://placehold.co/400x200/5f9ea0/ffffff?text=Photography' },
-        { title: 'VIDEO EDITING', isRegistered: false, description: 'Videography for weddings, birthdays, parties, and all events.', image: 'https://placehold.co/400x200/ff7f50/ffffff?text=Video' },
-        { title: 'GRAPHIC DESIGN', isRegistered: false, description: 'Creative minds with great photo manipulation skills, to make your work professionally tagged.', image: 'https://placehold.co/400x200/6495ed/ffffff?text=Design' },
-        { title: 'FURNITURE', isRegistered: false, description: 'Custom and pre-made furniture solutions for home and office, built with quality and style.', image: 'https://placehold.co/400x200/deb887/ffffff?text=Furniture' },
-        { title: 'TAILORING', isRegistered: false, description: 'Bespoke tailoring and fashion design services for all occasions, delivering the perfect fit.', image: 'https://placehold.co/400x200/A52A2A/ffffff?text=Tailoring' },
-        { title: 'HAIR STYLIST', isRegistered: true, description: 'Professional hair styling, braiding, and treatment services for all hair types.', image: 'https://placehold.co/400x200/333333/ffffff?text=Stylist' },
-        { title: 'CONTENT MANAGEMENT', isRegistered: false, description: 'Managing your digital content, social media to website updates, with professional care.', image: 'https://placehold.co/400x200/9932cc/ffffff?text=Content' },
-        { title: 'WRITING', isRegistered: true, description: 'Professional writing services including content creation, copywriting, and technical documentation.', image: 'https://placehold.co/400x200/8fbc8f/ffffff?text=Writing' }
+        { title: 'CREATORS', isRegistered: true, description: 'Event planning, content creators, videography, photography, photo shoot, coverage, hangout, weddings, birthdays, parties, pre-ceremonial setups, engagement and surprises.', image: 'https://placehold.co/400x200/5f9ea0/ffffff?text=Creators' },
+        { title: 'VACANT 01', isRegistered: false, description: 'Videography for weddings, birthdays, parties, and all events.', image: 'https://placehold.co/400x200/ff7f50/ffffff?text=Vacant' },
+        { title: 'VACANT 02', isRegistered: false, description: 'Creative minds with great photo manipulation skills, to make your work professionally tagged.', image: 'https://placehold.co/400x200/6495ed/ffffff?text=Vacant' },
+        { title: 'VACANT 03', isRegistered: false, description: 'Custom and pre-made furniture solutions for home and office, built with quality and style.', image: 'https://placehold.co/400x200/deb887/ffffff?text=Vacant' },
+        { title: 'FASHION', isRegistered: true, description: 'Textile, tailoring, fashion, stylist, sewing, weaving,  apparel, clothing, clothes, adire, ankara, lace, viscose, chiffon, cotton, guinea, linen, wears, pants, skirt, dress, top, sportwear, bags, purse', image: 'https://placehold.co/400x200/A52A2A/ffffff?text=Fashion Plus' },
+        { title: 'VACANT 04', isRegistered: false, description: 'Professional hair styling, braiding, and treatment services for all hair types.', image: 'https://placehold.co/400x200/333333/ffffff?text=Vacant' },
+        { title: 'VACANT', isRegistered: false, description: 'Managing your digital content, social media to website updates, with professional care.', image: 'https://placehold.co/400x200/9932cc/ffffff?text=Vacant' },
+        { title: 'VACANT', isRegistered: false, description: 'Professional writing services including content creation, copywriting, and technical documentation.', image: 'https://placehold.co/400x200/8fbc8f/ffffff?text=Vacant' }
     ];
     var serviceSearchInput = document.getElementById('serviceSearchInput');
     var clearServiceSearchBtn = document.getElementById('clearServiceSearchBtn');
