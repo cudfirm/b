@@ -18,7 +18,7 @@ const ALL_TAB_IDS = [
 let currentTabIndex = 2;
 
 const TAB_NAMES = {
-    'tab1':'Home','tab2':'Courses','tab3':'Services','tab4':'People',
+    'tab1':'Home','tab2':'Sectors','tab3':'Services','tab4':'People',
     'tab5':'Events','tab6':'Templates','tab7':'Grants','tab8':'Blank Page',
     'tab9':'Our Stars','tab10':'Love Notes','tab11':'Local Guides',
     'tab12':'Spark','tab13':'Discover','tab14':'Deals','tab15':'Community',
